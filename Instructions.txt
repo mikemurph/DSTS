@@ -1,0 +1,10 @@
+#INSTALLS
+pip install flask
+
+#RUNNING
+1) python app.py
+2) you will see something along the lines of "Running on http://"
+3) Copy/paste the "http://"" link (localhost) into your browser.
+
+#FOLDERS
+> templates/ => holds the HTML/CSS files
