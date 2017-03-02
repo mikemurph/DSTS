@@ -1,5 +1,6 @@
 #INSTALLS
 pip install flask
+I found MySQL Workbench useful for working with the database
 
 #RUNNING
 1) python app.py
