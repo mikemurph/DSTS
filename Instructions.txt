@@ -1,6 +1,6 @@
 #INSTALLS
-pip install flask
-I found MySQL Workbench useful for working with the database
+pip install flask (for MAC)
+conda install flask (for WINDOWS with Anaconda already installed)
 
 #RUNNING
 1) python app.py
