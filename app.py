@@ -10,3 +10,16 @@ def main():
 
 if __name__ == "__main__":
     app.run()
+
+def init_db():
+    db = get_db()
+    #need to create an sqlite3 database command: sqlite3 /tmp/flaskr.db < database.sql
+    with app.open_resource('database.sql', mode='r') as f:
+        db.cursor().executescript(f.read())
+    db.commit()
+
+@app.cli.command('initdb')
+def initdb_command():
+    #initializes the database
+    init_db()
+    print('Initialized the database.')
