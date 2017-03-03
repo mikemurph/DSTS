@@ -1,6 +1,6 @@
-#INSTALLS
-pip install flask (for MAC)
-conda install flask (for WINDOWS with Anaconda already installed)
+#INSTALLS (pip for MAC, conda for WINDOWS)
+- install flask
+- install sqlite3 (conda install -c blaze sqlite3=3.8.6)
 
 #RUNNING
 1) python app.py
