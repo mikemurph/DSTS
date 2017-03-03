@@ -1,5 +1,8 @@
 #imports
-from flask import Flask, render_template
+from flask import Flask, render_template, request, json, g
+import sqlite3 as sql
+
+
 app = Flask(__name__)
 
 #route, handler
