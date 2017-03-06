@@ -2,15 +2,15 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
 #engine = path to our MySQL database
-engine = create_engine("sqlite:///test.db.mwb")
+engine = create_engine("sqlite:///chemical_database.db")
 Base = declarative_base()
 Base.metadata.reflect(engine)
 
 from sqlalchemy.orm import relationship, backref
 
 #one of the existing tables in the temp MySQL is 'users'
-class Users(Base):
-    __table__ = Base.metadata.tables['users']
+class Chemicals(Base):
+    __table__ = Base.metadata.tables['chemicals']
 
 
 if __name__ == '__main__':
