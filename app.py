@@ -7,9 +7,17 @@ app = Flask(__name__)
 
 #route, handler
 @app.route("/")
-
 def main():
     return render_template('index.html')
+
+#new pageone
+@app.route('/pageone')
+def page_one():
+    return render_template('page_one.html')
+
+@app.route('/pagetwo')
+def page_two():
+    return render_template('page_two.html')
 
 if __name__ == "__main__":
     app.run()
