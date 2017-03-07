@@ -19,6 +19,13 @@ def page_one():
 def page_two():
     return render_template('page_two.html')
 
+#execute db script?
+@app.route('/exec')
+def parse(name = None):
+    import testdb
+    print("done")
+    return render_template('runDBscript.html', name = name)
+
 if __name__ == "__main__":
     app.run()
 
