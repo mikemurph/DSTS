@@ -8,12 +8,27 @@ app = Flask(__name__)
 
 #route, handler
 @app.route("/")
-
 def main():
     return render_template('index.html')
 
-# if __name__ == "__main__":
-#     app.run()
+#new pageone
+@app.route('/pageone')
+def page_one():
+    return render_template('page_one.html')
+
+@app.route('/pagetwo')
+def page_two():
+    return render_template('page_two.html')
+
+#execute db script?
+@app.route('/exec')
+def parse(name = None):
+    import testdb
+    print("done")
+    return render_template('runDBscript.html', name = name)
+
+if __name__ == "__main__":
+    app.run()
 
 def init_db():
     db = get_db()
