@@ -12,8 +12,17 @@ def query_db(query_string):
     cursor = conn.cursor()
     cursor.execute(query_string)
     # cursor.execute("SELECT STUFF FROM STUFF")
-    print(cursor.fetchall())
+    result = cursor.fetchall()
     conn.close()
+    return result
+
+#old
+#    conn = sql.connect("sdn.db")
+#    cursor = conn.cursor()
+#    cursor.execute(query_string)
+#    # cursor.execute("SELECT STUFF FROM STUFF")
+#    print(cursor.fetchall())
+#    conn.close()
 
 
 #route, handler
@@ -40,8 +49,10 @@ def parse(name = None):
 @app.route('/burundi')
 def show(name=None):
     sqlstring = "SELECT * FROM sdn WHERE d='BURUNDI'"
-    query_db(sqlstring)
-    return render_template('page_two.html', name = name)
+    output = query_db(sqlstring)
+    #prints out html from output
+    return render_template('page_two.html', output = output, name = name)
+
 
 if __name__ == "__main__":
     app.run()
@@ -66,8 +77,8 @@ def initdb_command():
 
 # try:
 #     cursor.execute("""CREATE TABLE albums
-#                       (title text, artist text, release_date text, 
-#                        publisher text, media_type text) 
+#                       (title text, artist text, release_date text,
+#                        publisher text, media_type text)
 #                    """)
 # except:
 #     pass
