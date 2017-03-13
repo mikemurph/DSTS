@@ -1,6 +1,7 @@
 #imports
 from flask import Flask, render_template, request, json, g
 import sqlite3 as sql
+import csv
 
 
 app = Flask(__name__)
@@ -11,8 +12,8 @@ app = Flask(__name__)
 def main():
     return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()
 
 def init_db():
     db = get_db()
@@ -26,3 +27,38 @@ def initdb_command():
     #initializes the database
     init_db()
     print('Initialized the database.')
+
+# conn = sql.connect("mydatabase.db")
+# cursor = conn.cursor()
+
+# try:
+#     cursor.execute("""CREATE TABLE albums
+#                       (title text, artist text, release_date text, 
+#                        publisher text, media_type text) 
+#                    """)
+# except:
+#     pass
+
+# cursor.execute("INSERT INTO albums VALUES ('Glow', 'Andy Hunter', '7/24/2012', 'Xplore Records', 'MP3')")
+# conn.commit()
+# albums = [('Exodus', 'Andy Hunter', '7/9/2002', 'Sparrow Records', 'CD'),
+#           ('Until We Have Faces', 'Red', '2/1/2011', 'Essential Records', 'CD'),
+#           ('The End is Where We Begin', 'Thousand Foot Krutch', '4/17/2012', 'TFKmusic', 'CD'),
+#           ('The Good Life', 'Trip Lee', '4/10/2012', 'Reach Records', 'CD')]
+# cursor.executemany("INSERT INTO albums VALUES (?,?,?,?,?)", albums)
+# conn.commit()
+
+# sql = "SELECT * FROM albums WHERE artist=?"
+# cursor.execute(sql, [("Red")])
+# print(cursor.fetchall())  # or use fetchone()
+
+# with open('test.csv', 'r') as file:
+#     dr = csv.DictReader(file)
+#     to_db = [(i['title'], i['artist'], i['release_date'], i['publisher'], i['media_type']) for i in dr]
+# cursor.executemany("INSERT INTO albums VALUES (?,?,?,?,?)", to_db)
+# conn.commit()
+
+# sql = "SELECT * FROM albums WHERE title='bob'"
+# cursor.execute(sql)
+# print(cursor.fetchall())
+# conn.close()
