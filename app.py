@@ -1,10 +1,20 @@
 #imports
 from flask import Flask, render_template, request, json, g
 import sqlite3 as sql
-import csv
+import testdb
 
 
 app = Flask(__name__)
+
+# functions
+def query_db(query_string):
+    conn = sql.connect("sdn.db")
+    cursor = conn.cursor()
+    cursor.execute(query_string)
+    # cursor.execute("SELECT STUFF FROM STUFF")
+    print(cursor.fetchall())
+    conn.close()
+
 
 #route, handler
 @app.route("/")
@@ -27,6 +37,12 @@ def parse(name = None):
     print("done")
     return render_template('runDBscript.html', name = name)
 
+@app.route('/burundi')
+def show(name=None):
+    sqlstring = "SELECT * FROM sdn WHERE d='BURUNDI'"
+    query_db(sqlstring)
+    return render_template('page_two.html', name = name)
+
 if __name__ == "__main__":
     app.run()
 
@@ -42,6 +58,8 @@ def initdb_command():
     #initializes the database
     init_db()
     print('Initialized the database.')
+
+
 
 # conn = sql.connect("mydatabase.db")
 # cursor = conn.cursor()
