@@ -11,7 +11,7 @@ def query_db(query_string):
     conn = sql.connect("sdn.db")
     cursor = conn.cursor()
     cursor.execute(query_string)
-    # cursor.execute("SELECT STUFF FROM STUFF")
+    # cursor.execute("SELECT ? FROM STUFF", stuff)
     result = cursor.fetchall()
     conn.close()
     return result
