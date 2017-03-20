@@ -31,8 +31,8 @@ with open('sdn_mod.csv', 'r') as file:
 cursor.executemany("INSERT INTO sdn VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", to_db)
 conn.commit()
 
-sql = "SELECT * FROM sdn WHERE d='CUBA'"
-cursor.execute(sql)
+query_string = "SELECT * FROM sdn WHERE d='CUBA'"
+cursor.execute(query_string)
 print(cursor.fetchall())
 conn.close()
 
