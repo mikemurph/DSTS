@@ -45,6 +45,21 @@ def page_two():
 def individual_page():
     return render_template('individual.html')
 
+#new individual page
+@app.route('/organization')
+def organization_page():
+    return render_template('organization.html')
+
+#new individual page
+@app.route('/aircraft')
+def aircraft_page():
+    return render_template('aircraft.html')
+
+#new individual page
+@app.route('/vessel')
+def vessel_page():
+    return render_template('vessel.html')
+
 #execute db script?
 @app.route('/exec')
 def parse(name = None):
