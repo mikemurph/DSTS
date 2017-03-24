@@ -27,7 +27,7 @@ def query_db(query_string):
 
 #route, handler
 @app.route("/")
-def main():
+def main(debug=True):
     return render_template('index.html')
 
 #new pageone
@@ -35,9 +35,15 @@ def main():
 def page_one():
     return render_template('page_one.html')
 
+#new pagetwo
 @app.route('/pagetwo')
 def page_two():
     return render_template('page_two.html')
+
+#new individual page
+@app.route('/individual')
+def individual_page():
+    return render_template('individual.html')
 
 #execute db script?
 @app.route('/exec')
