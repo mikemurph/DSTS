@@ -16,11 +16,26 @@
 </head>
 <body>
 
-<p>Animated search form:</p>
+<p>Animated search form: {{ testvar }}</p>
 
-<form>
-  <input type="text" name="search" placeholder="Search..">
+  <form action="namesearch" method="POST">
+  <select name="DropDown0">
+    <option value="Name">Name(s)</option>
+    <option value="ID Number">ID Number(s)</option>
+    <option value="Program Tag">Program Tag</option>
+    <option value="Location">Location</option>
+    <option value="Organization">Organization(s)</option>
+    <option value="Social Media*">Social Media*</option>
+    <option value="Press Release*">Press Release*</option>
+  </select>
+
+    <input type="text" name="search" placeholder="Search..">
+
+    <input type="submit" href="/namesearch" name="my-form" value="Submit!" class="btn btn-lg btn-success"/>
+
 </form>
+
+
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">

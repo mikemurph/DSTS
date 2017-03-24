@@ -53,9 +53,19 @@ def show(name=None):
     #prints out html from output
     return render_template('page_two.html', output = output, name = name)
 
+@app.route('/namesearch', methods=["POST"])
+def name_search():
+    # search_term = request.form['Name']
+    # sqlstring = "SELECT * FROM sdn WHERE b='individual' AND {}".format(search_term)
+    # result = query_db(sqlstring)
+    test = "hello this is test"
+    return render_template('page_two.html', output=test)
+
+
+
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 def init_db():
     db = get_db()
