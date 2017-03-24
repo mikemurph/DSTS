@@ -75,12 +75,20 @@ def show(name=None):
     return render_template('page_two.html', output = output, name = name)
 
 @app.route('/namesearch', methods=["POST"])
-def name_search():
-    # search_term = request.form['Name']
-    # sqlstring = "SELECT * FROM sdn WHERE b='individual' AND {}".format(search_term)
-    # result = query_db(sqlstring)
-    test = "hello this is test"
-    return render_template('page_two.html', output=test)
+def make_search():
+    search_category = request.form['DropDown0']
+    search_term = request.form['SearchBox0']
+
+    # note - only works for 'name' right now, need to make columns variable as well.  
+
+    sqlstring = """
+    SELECT DISTINCT * FROM sdn WHERE c='{0}' AND b LIKE '%{1}%'
+    """.format(search_category, search_term) 
+
+    # why are there repeats..??? should not need to use DISTINCT.
+    # VALENCIA, Reynel 
+    result = query_db(sqlstring)
+    return render_template('page_one.html', result=result)
 
 
 

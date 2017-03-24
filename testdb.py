@@ -33,7 +33,7 @@ conn.commit()
 
 query_string = "SELECT * FROM sdn WHERE d='CUBA'"
 cursor.execute(query_string)
-print(cursor.fetchall())
+# print(cursor.fetchall())
 conn.close()
 
 # PERHAPS USE THE NESTED JSON FILE. JUST HAVE ID IN ONE COLUMN AND ALL THE OTHER JSON DATA IN THE OTHER
