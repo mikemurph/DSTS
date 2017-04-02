@@ -1,7 +1,7 @@
 #imports
 from flask import Flask, render_template, request, json, g
 import sqlite3 as sql
-import testdb
+import db_init
 
 
 app = Flask(__name__)
@@ -63,7 +63,7 @@ def vessel_page():
 #execute db script?
 @app.route('/exec')
 def parse(name = None):
-    import testdb
+    import db_init
     print("done")
     return render_template('runDBscript.html', name = name)
 
