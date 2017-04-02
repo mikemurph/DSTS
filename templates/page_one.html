@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<p>Animated search form:</p>
+<p>Search form:</p>
 
   <form action="namesearch" method="POST">
   <select name="DropDown0">
@@ -35,7 +35,54 @@
 
 </form>
 
-{{ result }}
+<!-- {{ result }} -->
+
+<table>
+  {% for row in result %}
+  <tr>
+    <td> {{ row }}</td>
+  </tr> 
+  {% endfor %}
+</table>
+
+<br>
+<br>
+
+<table border = 1>
+   <thead style="width: 100px; text-align: center;">
+      <td>ID</td>
+      <td>NAME</td>
+      <td>TYPE</td>
+      <td>d</td>
+      <td>e</td>
+      <td>f</td>
+      <td>g</td>
+      <td>h</td>
+      <td>i</td>
+      <td>j</td>
+      <td>k</td>
+      <td>l</td>
+   </thead>
+   
+   <!-- https://www.tutorialspoint.com/flask/flask_sqlite.htm -->
+   {% for row in result %}
+      <tr>
+         <td>{{row[0]}}</td>
+         <td>{{row[1]}}</td>
+         <td>{{row[2]}}</td>
+         <td>{{row[3]}}</td>  
+         <td>{{row[4]}}</td> 
+         <td>{{row[5]}}</td>
+         <td>{{row[6]}}</td>
+         <td>{{row[7]}}</td>
+         <td>{{row[8]}}</td>  
+         <td>{{row[9]}}</td>   
+         <td>{{row[10]}}</td>
+         <td>{{row[11]}}</td>
+      </tr>
+   {% endfor %}
+</table>
+
 
 <div class="row">
   <div class="col-lg-6">
