@@ -1,10 +1,36 @@
+#!/usr/bin/env/python3
+
 #imports
 from flask import Flask, render_template, request, json, g
+
 import sqlite3 as sql
 import db_init
 
+import time
+import atexit
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.interval import IntervalTrigger
+# http://stackoverflow.com/questions/21214270/flask-run-function-every-hour
+#https://pypi.python.org/pypi/schedule
+
 
 app = Flask(__name__)
+db_init.first_init()
+db_init.db_populate()
+
+#### SCHEDULING BLOCK ####
+scheduler = BackgroundScheduler()
+scheduler.start()
+scheduler.add_job(
+    func=db_init.db_update,
+    trigger=IntervalTrigger(hours=1),
+    id='updating_database',
+    name='Update dabatase',
+    replace_existing=True
+    )
+atexit.register(lambda: scheduler.shutdown())
+#### END SCHEDULING BLOCK ####
+
 
 # functions
 def query_db(query_string):
@@ -15,6 +41,7 @@ def query_db(query_string):
     result = cursor.fetchall()
     conn.close()
     return result
+
 
 #old
 #    conn = sql.connect("sdn.db")
