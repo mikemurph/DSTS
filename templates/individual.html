@@ -1,3 +1,120 @@
 <!DOCTYPE html>
-<p>indivdiafjdsklfjdas kl;f</p>
+<html>
+<head>
+    <title>OFAC 2.0</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+<p>Search form:</p>
+
+  <form action="namesearch" method="POST">
+  <select name="DropDown0">
+    <option value="individual">Name(s)</option>
+    <option value="ID Number">ID Number(s)</option>
+    <option value="Program Tag">Program Tag</option>
+    <option value="Location">Location</option>
+    <option value="Organization">Organization(s)</option>
+    <option value="Social Media*">Social Media*</option>
+    <option value="Press Release*">Press Release*</option>
+  </select>
+
+    <input type="text" name="SearchBox0" placeholder="Search..">
+
+    <input type="submit" href="/namesearch" name="my-form" value="Submit!" class="btn btn-lg btn-success"/>
+
+</form>
+
+<!-- {{ result }} -->
+
+<table>
+  {% for row in result %}
+  <tr>
+    <td> {{ row }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br>
+<br>
+
+<table border = 1>
+   <thead style="width: 100px; text-align: center;">
+      <td>ID</td>
+      <td>NAME</td>
+      <td>TYPE</td>
+      <td>d</td>
+      <td>e</td>
+      <td>f</td>
+      <td>g</td>
+      <td>h</td>
+      <td>i</td>
+      <td>j</td>
+      <td>k</td>
+      <td>l</td>
+   </thead>
+
+   <!-- https://www.tutorialspoint.com/flask/flask_sqlite.htm -->
+   {% for row in result %}
+      <tr>
+         <td>{{row[0]}}</td>
+         <td>{{row[1]}}</td>
+         <td>{{row[2]}}</td>
+         <td>{{row[3]}}</td>
+         <td>{{row[4]}}</td>
+         <td>{{row[5]}}</td>
+         <td>{{row[6]}}</td>
+         <td>{{row[7]}}</td>
+         <td>{{row[8]}}</td>
+         <td>{{row[9]}}</td>
+         <td>{{row[10]}}</td>
+         <td>{{row[11]}}</td>
+      </tr>
+   {% endfor %}
+</table>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+      <input type="text" class="form-control" aria-label="...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="...">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Action <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+</body>
 </html>
