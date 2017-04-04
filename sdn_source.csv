@@ -1,4 +1,4 @@
-a,b,c,d,e,f,g,h,i,j,k,l
+uid,name,sdnType,program,title,callSign,vesselType,tonnage,grossTonnage,vesselFlag,vesselOwner,remarks
 36,AEROCARIBBEAN AIRLINES,-0- ,CUBA,-0- ,-0- ,-0- ,-0- ,-0- ,-0- ,-0- ,-0- 
 173,"ANGLO-CARIBBEAN CO., LTD.",-0- ,CUBA,-0- ,-0- ,-0- ,-0- ,-0- ,-0- ,-0- ,-0- 
 306,BANCO NACIONAL DE CUBA,-0- ,CUBA,-0- ,-0- ,-0- ,-0- ,-0- ,-0- ,-0- ,a.k.a. 'BNC'.

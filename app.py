@@ -109,7 +109,7 @@ def make_search():
     # note - only works for 'name' right now, need to make columns variable as well.  
 
     sqlstring = """
-    SELECT DISTINCT * FROM sdn WHERE c='{0}' AND b LIKE '%{1}%'
+    SELECT DISTINCT * FROM sdn WHERE sdnType='{0}' AND name LIKE '%{1}%'
     """.format(search_category, search_term) 
 
     # why are there repeats..??? should not need to use DISTINCT.

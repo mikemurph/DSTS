@@ -10,8 +10,8 @@ def first_init():
 
     try:
         cursor.execute("""CREATE TABLE sdn
-                          (a text, b text, c text, 
-                           d text, e text, f text, g text, h text, i text, j text, k text, l text) 
+                          (uid text, name text, sdnType text, 
+                           program text, title text, callSign text, vesselType text, tonnage text, grossTonnage text, vesselFlag text, vesselOwner text, remarks text) 
                        """)
     except:
         pass
@@ -31,21 +31,29 @@ def db_populate():
     conn = sql.connect("sdn.db")
     cursor = conn.cursor()
 
-    with open('sdn_source.csv', 'r') as file:
-      reader = csv.DictReader(file)
-      to_db = [(i['a'], i['b'], i['c'], i['d'], i['e'], i['f'], i['g'], i['h'], i['i'], i['j'], i['k'], i['l']) for i in reader]
+    delete_string = """DELETE FROM sdn"""
+    cursor.execute(delete_string)
+
+    try:
+        with open('sdn_source.csv', 'r') as file:
+          reader = csv.DictReader(file)
+          to_db = [(i['uid'], i['name'], i['sdnType'], i['program'], i['title'], i['callSign'], i['vesselType'], i['tonnage'], i['grossTonnage'], i['vesselFlag'], i['vesselOwner'], i['remarks']) for i in reader]
+    except:
+        db_update()
+        with open('sdn_source.csv', 'r') as file:
+          reader = csv.DictReader(file)
+          to_db = [(i['uid'], i['name'], i['sdnType'], i['program'], i['title'], i['callSign'], i['vesselType'], i['tonnage'], i['grossTonnage'], i['vesselFlag'], i['vesselOwner'], i['remarks']) for i in reader]
 
     cursor.executemany("INSERT INTO sdn VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", to_db)
     conn.commit()
 
-    query_string = "SELECT * FROM sdn WHERE d='CUBA'"
-    cursor.execute(query_string)
+    # query_string = "SELECT * FROM sdn WHERE d='CUBA'"
+    # cursor.execute(query_string)
     # print(cursor.fetchall())
     conn.close()
 
 
 
-# PERHAPS USE THE NESTED JSON FILE. JUST HAVE ID IN ONE COLUMN AND ALL THE OTHER JSON DATA IN THE OTHER
 
 
 def db_update():
@@ -60,8 +68,9 @@ def db_update():
 
     with open('sdn_source.csv', 'w') as file:
         writer = csv.writer(file)
-        writer.writerow(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'])
+        writer.writerow(['uid', 'name', 'sdnType', 'program', 'title', 'callSign', 'vesselType', 'tonnage', 'grossTonnage', 'vesselFlag', 'vesselOwner', 'remarks'])
         writer.writerows(data)
+
 
     db_populate()
 
