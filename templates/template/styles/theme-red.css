@@ -1,0 +1,30 @@
+.navigation,
+#login-page {
+  background-image: url('../images/backgrounds/sunset.png');
+}
+
+.navigation:after,
+#login-page:after {
+  background: #f95858;
+  background: linear-gradient(to bottom, rgba(250,72,72,0.85) 5%, rgba(255, 66, 66, 0.9) 100%);
+}
+
+body.no-bg-img .navigation:after {
+  background-color: #f95858;
+}
+
+.breadcrumb > li.breadcrumb-home > a > i,
+.search-form:hover span.form-control-feedback,
+.search-form span.form-control-feedback:focus {
+  color: #f95858;
+}
+
+.search-form .form-control:hover,
+.search-form .form-control:focus {
+  border: 2px solid #f95858;
+}
+
+.pace .pace-progress {
+  background: #f95858;
+  background: linear-gradient(to right, rgba(250,72,72,0) 5%, rgba(255, 66, 66, 0.9) 100%);
+}

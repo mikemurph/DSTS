@@ -1,0 +1,30 @@
+.navigation,
+#login-page {
+  background-image: url('../images/backgrounds/hills.png');
+}
+
+.navigation:after,
+#login-page:after {
+  background: #2da9e9;
+  background: linear-gradient(to bottom, rgba(32,179,255,0.75) 5%, rgba(5, 130, 215, 0.75) 100%);
+}
+
+body.no-bg-img .navigation:after {
+  background-color: #2da9e9;
+}
+
+.breadcrumb > li.breadcrumb-home > a > i,
+.search-form:hover span.form-control-feedback,
+.search-form span.form-control-feedback:focus {
+  color: #2da9e9;
+}
+
+.search-form .form-control:hover,
+.search-form .form-control:focus {
+  border: 2px solid #2da9e9;
+}
+
+.pace .pace-progress {
+  background: #2da9e9;
+  background: linear-gradient(to right, rgba(32,179,255,0) 5%, rgba(5, 130, 215, 0.75) 100%);
+}

@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dauphin - Premium Responsive Bootstrap Admin Template - Forms</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.png"/>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
+    
+    <!-- Styling -->
+    <link rel="stylesheet" href="addons/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="addons/toastr/toastr.min.css"/>
+    <link rel="stylesheet" href="addons/fontawesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="addons/ionicons/css/ionicons.css"/>
+    <link rel="stylesheet" href="addons/noUiSlider/nouislider.min.css"/>
+
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/theme-blue.css" class="theme"/>
+
+    <!-- End of Styling -->
+
+
+    <!-- Current page Styling -->
+    <style>
+
+        #vertical-slider {
+            float: left;
+            height: 280px;
+            margin: 10px 0;
+        }
+
+        #vertical-slider .noUi-connect {
+            background-color: #00c099;
+        }
+
+        #horizontal-sliders {
+            float: right;
+            width: calc(100% - 130px);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* For this slider, disable the 'origin' size. */
+        #connect .noUi-origin {
+            right: auto;
+            width: 0;
+        }
+
+        /* Position the bar and color it. */
+        #connect .connect {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background: #2da9e9;
+            box-shadow: inset 0 0 3px rgba(51,51,51,0.45);
+        }
+
+        /* When the slider is moved by tap,
+           transition the connect bar like the handle. */
+        #connect.noUi-state-tap .connect {
+        -webkit-transition: left 300ms, right 300ms;
+            transition: left 300ms, right 300ms;
+        }
+
+        #input-select,
+        #input-number {
+            padding: 7px;
+            margin: 15px 5px 5px;
+            width: 70px;
+        }
+
+        #input-select {
+            padding: 5px 7px 7px 7px;
+        }
+
+        #html5 .noUi-connect {
+            background-color: #fdb029;
+        }
+    </style>
+    <!-- End of current page Styling -->
+</head>
+<body class="hold-transition">
+
+    <!-- Header -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div id="navbar" class="navbar-collapse">
+            	<ul class="breadcrumb">
+        			<li class="breadcrumb-home"><a href=""><i class="fa fa-home"></i></a>
+        			<li class="active"><a href="">Forms</a></li>
+        		</ul>
+                <ul class="nav navbar-nav navbar-right">
+                	<li>
+			            <form class="search-form form-group has-feedback">
+		            		<span class="fa fa-search form-control-feedback"></span>
+		            		<input type="text" class="form-control" name="search" id="search" placeholder="Search...">
+			            </form> 
+                	</li>
+                    <li class="dropdown" id="notifications-toggle">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+                        	<i class="fa fa-bell"></i>
+                            <span class="label label-danger notification-label">2</span>
+                        </a>
+                        <ul class="list-unstyled notifications dropdown-menu">
+                        	<li>
+                        		<img alt="" class="img-circle small-image vcentered" src="images/profile2.png">
+                        		<span class="notification-title vcentered"> 
+                        			<b> Elon Musk </b> has created an <b> administrator </b> account two times already.
+                        		</span>
+                        		<span class="notification-time text-muted">  15m ago </span>
+                        	</li>
+                        	<li>
+                        		<i class="fa fa-refresh small-icon text-center vcentered"></i>
+                        		<span class="notification-title vcentered"> 
+                        			<b> Device Boo_71 </b> has been restarted.
+                        		</span>
+                        		<span class="notification-time text-muted">  2h ago </span>
+                        	</li>
+                        	<li>
+                        		<i class="fa fa-plus-square small-icon text-center vcentered"></i>
+                        		<span class="notification-title vcentered"> 
+                        			<b> Device Boo_72 </b> has been added.
+                        		</span>
+                        		<span class="notification-time text-muted">  3h ago </span>
+                        	</li>
+                        </ul>
+                    </li>
+                    <li>
+                    	<a href="login.html">
+                        	<i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                    <li class="profile">
+                        <a href="profile.html">
+                            <img alt="" src="images/profile.png" class="img-circle">
+                            <div class="vcentered">
+	                            <p class="profile-name">Dennis Novac</p>
+	                            <p class="profile-position">Web Developer</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Header -->
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <a class="navbar-brand">
+            <img alt="" class="logo vcentered" src="images/logo.png">
+            <span class="vcentered">Dauphin</span>
+            <i class="fa fa-bars text-primary left-nav-toggle pull-right vcentered"></i>
+        </a>
+        <ul class="nav primary">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-tasks"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="messages.html">
+                    <i class="fa fa-envelope"></i>
+                    <span>Messages</span>
+                    <span class="label label-warning left-nav-label"> 24</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#elements" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-puzzle-piece"></i>
+                    <span> Elements </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="elements" class="nav nav-item collapse">
+                    <li>
+                        <a href="typography.html"> 
+                            <i class="fa fa-text-height"></i>
+                            <span> Typography </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="panels.html"> 
+                            <i class="fa fa-square-o"></i>
+                            <span> Panels </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="draggable.html"> 
+                            <i class="fa fa-reorder"></i>
+                            <span> Draggable </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tabs.html"> 
+                            <i class="fa fa-clone"></i>
+                            <span> Tabs </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buttons.html"> 
+                            <i class="fa fa-flask"></i>
+                            <span> Buttons </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="icons.html"> 
+                            <i class="fa fa-magic"></i>
+                            <span> Icons </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="fa fa-warning"></i>
+                            <span> Notifications </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="progressbars.html"> 
+                            <i class="fa fa-external-link-square"></i>
+                            <span> Progress bars </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="grid.html"> 
+                            <i class="fa fa-th-large"></i>
+                            <span> Bootstrap Grid </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <i class="fa fa-calendar"></i>
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="tables.html">
+                    <i class="fa fa-plus-square-o"></i>
+                    <span>Tables</span>
+                </a>
+            </li>
+            <li>
+                <a href="forms.html">
+                    <i class="fa fa-scissors"></i>
+                    <span>Forms</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#charts" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-area-chart"></i>
+                    <span> Charts </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="charts" class="nav nav-item collapse">
+                    <li>
+                        <a href="chartjs.html"> 
+                            <i class="fa fa-bar-chart"></i>
+                            <span> Chart.js </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="morrisjs.html"> 
+                            <i class="fa fa-line-chart"></i>
+                            <span> Morris.js Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="flot.html"> 
+                            <i class="fa fa-pie-chart"></i>
+                            <span> Flot Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rickshaw.html"> 
+                            <i class="fa fa-signal"></i>
+                            <span> Rickshaw Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sparkline.html"> 
+                            <i class="ion ion-arrow-graph-up-right"></i>
+                            <span> Sparkline Charts </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="metrics.html">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>Metrics</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#maps" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-map-o"></i>
+                    <span> Maps </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="maps" class="nav nav-item collapse">
+                    <li>
+                        <a href="googlemaps.html"> 
+                            <i class="fa fa-google"></i>
+                            <span> Google Maps </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mapael.html"> 
+                            <i class="fa fa-map-pin"></i>
+                            <span> Mapael </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#menu-levels" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-sort-amount-asc"></i>
+                    <span> Menu levels </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="menu-levels" class="nav nav-item collapse">
+                    <li class="nav-item-expandable">
+                        <a href="#menu-levels-1" data-toggle="collapse" aria-expanded="false"> 
+                            <i class="fa fa-sort"></i>
+                            <span> Menu expandable</span>
+                            <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                        </a>
+                        <ul id="menu-levels-1" class="nav nav-item-secondary collapse">
+                            <li>
+                                <a> 
+                                    <i class="fa fa-star" href="#"></i>
+                                    <span> Sub-menu element</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a> 
+                                    <i class="fa fa-star-o" href="#"></i>
+                                    <span> Sub-menu element 2 </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a> 
+                            <i class="fa fa-search" href="#"></i>
+                            <span> Menu element </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#pages" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-flash"></i>
+                    <span> Pages </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="pages" class="nav nav-item collapse">
+                    <li>
+                        <a href="404.html"> 
+                            <i class="fa fa-code"></i>
+                            <span> 404 </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sample.html"> 
+                            <i class="fa fa-check-circle-o"></i>
+                            <span> Sample page </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html"> 
+                            <i class="fa fa-user-o"></i>
+                            <span> Login </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html"> 
+                            <i class="fa fa-user-plus"></i>
+                            <span> Register </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html"> 
+                            <i class="fa fa-user"></i>
+                            <span> Profile </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dragdrop.html"> 
+                            <i class="fa fa-window-restore"></i>
+                            <span> Drag &amp; Drop </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documents.html"> 
+                            <i class="fa fa-file-o"></i>
+                            <span> Documents </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="time text-center">
+            <h5 class="current-time2">&nbsp;</h5>
+            <h5 class="current-time">&nbsp;</h5>
+        </div>
+    </div>
+    <!-- End of Navigation -->
+
+    <!-- Scroll up button -->
+    <a class="scroll-up"><i class="fa fa-chevron-up"></i></a>
+    <!-- End of scroll up button -->
+    
+    <!-- Main content-->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Simple form
+
+                             <div class="panel-options">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form class="row">
+                              <div class="form-wrapper col-sm-6">
+                                  <label for="exampleInputEmail1">Email address</label>
+                                  <div class="form-group ">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example@gmail.com">
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper col-sm-6">
+                                  <label for="exampleInputPassword1">Password</label>
+                                  <div class="form-group">
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper col-sm-12">
+                                  <label for="descriptionField">Additional notes</label>
+                                  <div class="form-group">
+                                    <textarea class="form-control" id="descriptionField" placeholder="Enter any notes here..." style="height: 100px;"></textarea> 
+                                  </div>
+                              </div>
+                              
+                              <div class="form-wrapper col-sm-12">
+                                  <label for="sel1">Select list:</label>
+                                  <div class="form-group">
+                                      <select class="form-control" id="sel1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="form-wrapper col-sm-12">
+                                  <label for="exampleInputFileMin">File input</label>
+                                  <div class="form-group">
+                                    <input type="file" id="exampleInputFileMin">
+                                    <p class="help-block">Help-block text here.</p>
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper col-sm-12">
+                                <div class="form-group">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkbox-placeholder"></span>
+                                        Check me out
+                                    </label>
+                                </div>
+                              </div>
+
+                              <div class="col-sm-12">
+                                  <button type="submit" class="btn btn-info">Submit</button>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Form control states and sizes
+
+                             <div class="panel-options">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form class="row">
+                                <div class="form-wrapper col-sm-6">
+                                    <label for="focusedInput">Read only</label>
+                                    <div class="form-group">
+                                      <input class="form-control" id="focusedInput" type="text" readonly placeholder="You can't edit me">
+                                    </div>
+                                </div>
+
+                                <div class="form-wrapper col-sm-6">
+                                    <label>Disabled</label>
+                                    <div class="form-group">
+                                      <input class="form-control" type="text" disabled placeholder="I am disabled">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="form-wrapper col-sm-4">
+                                            <label>Large input</label>
+                                            <div class="form-group">
+                                              <input type="text" class="form-control input-lg">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-wrapper col-sm-4">
+                                            <label>Default input</label>
+                                            <div class="form-group">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-wrapper col-sm-4">
+                                            <label>Small input</label>
+                                            <div class="form-group">
+                                              <input type="text" class="form-control input-sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrapper col-sm-4">
+                                    <label>Input with success</label>
+                                    <div class="form-group has-success has-feedback">
+                                      <input type="text" class="form-control" id="inputSuccess2">
+                                      <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrapper col-sm-4">
+                                    <label>Input with warning</label>
+                                    <div class="form-group has-warning has-feedback">
+                                      <input type="text" class="form-control" id="inputWarning2">
+                                      <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrapper col-sm-4">
+                                    <label for="inputError2">Input with error</label>
+                                    <div class="form-group has-error has-feedback">
+                                      <input type="text" class="form-control" id="inputError2">
+                                      <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Minimalist form
+
+                             <div class="panel-options">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form class="row">
+                              <div class="form-wrapper minimalist col-sm-6">
+                                  <label for="exampleInputEmail2">Email address</label>
+                                  <div class="form-group ">
+                                    <input type="email" class="form-control minimalist" id="exampleInputEmail2" placeholder="example@gmail.com">
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper minimalist col-sm-6">
+                                  <label for="exampleInputPassword2">Password</label>
+                                  <div class="form-group">
+                                    <input type="password" class="form-control minimalist" id="exampleInputPassword2" placeholder="">
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper minimalist col-sm-12">
+                                  <label for="descriptionField2">Additional notes</label>
+                                  <div class="form-group">
+                                    <textarea class="form-control minimalist" id="descriptionField2" placeholder="Enter any notes here..." style="height: 100px;"></textarea> 
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper minimalist col-sm-6">
+                                  <label for="sel2">Select list:</label>
+                                  <div class="form-group">
+                                      <select class="form-control" id="sel2">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                      </select>
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper minimalist col-sm-6">
+                                  <label for="sel3">Select sub-list:</label>
+                                  <div class="form-group">
+                                      <select class="form-control" id="sel3">
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                      </select>
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper minimalist col-sm-12">
+                                  <label for="exampleInputFileMin">File input</label>
+                                  <div class="form-group">
+                                    <input type="file" id="exampleInputFileMin2">
+                                    <p class="help-block">Help-block text here.</p>
+                                  </div>
+                              </div>
+
+                              <div class="form-wrapper minimalist col-sm-12">
+                                <div class="form-group">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkbox-placeholder"></span>
+                                        Check me out
+                                    </label>
+                                </div>
+                              </div>
+
+                              <div class="col-sm-12">
+                                  <button type="submit" class="btn btn-info btn-outline">Submit</button>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Form control states and sizes
+
+                             <div class="panel-options">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form class="row">
+                                <div class="form-wrapper minimalist col-sm-6">
+                                    <label for="focusedInput2">Read only</label>
+                                    <div class="form-group">
+                                      <input class="form-control" id="focusedInput2" type="text" readonly placeholder="You can't edit me">
+                                    </div>
+                                </div>
+
+                                <div class="form-wrapper minimalist col-sm-6">
+                                    <label>Disabled</label>
+                                    <div class="form-group">
+                                      <input class="form-control" type="text" disabled placeholder="I am disabled">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="form-wrapper minimalist col-sm-4">
+                                            <label>Large input</label>
+                                            <div class="form-group minimalist">
+                                              <input type="text" class="form-control input-lg">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-wrapper minimalist col-sm-4">
+                                            <label>Default input</label>
+                                            <div class="form-group minimalist">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-wrapper minimalist col-sm-4">
+                                            <label>Small input</label>
+                                            <div class="form-group minimalist">
+                                              <input type="text" class="form-control input-sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrapper minimalist col-sm-4">
+                                    <label>Input with success</label>
+                                    <div class="form-group has-success has-feedback">
+                                      <input type="text" class="form-control">
+                                      <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrapper minimalist col-sm-4">
+                                    <label>Input with warning</label>
+                                    <div class="form-group has-warning has-feedback">
+                                      <input type="text" class="form-control">
+                                      <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-wrapper minimalist col-sm-4">
+                                    <label>Input with error</label>
+                                    <div class="form-group has-error has-feedback">
+                                      <input type="text" class="form-control">
+                                      <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Checkboxes
+
+                             <div class="panel-options">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkbox-placeholder"></span>
+                                            Unchecked
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkbox-placeholder"></span>
+                                            Default 
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="info" checked>
+                                            <span class="checkbox-placeholder"></span>
+                                            Info 
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="success" checked>
+                                            <span class="checkbox-placeholder"></span>
+                                            Success 
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="warning" checked>
+                                            <span class="checkbox-placeholder"></span>
+                                            Warning 
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" class="danger" checked>
+                                            <span class="checkbox-placeholder"></span>
+                                            Danger 
+                                        </label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Radio
+
+                             <div class="panel-options">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <label class="radio">
+                                            <input type="radio" name="notchecked">
+                                            <span></span>
+                                            Unchecked
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio">
+                                            <input type="radio" checked>
+                                            <span></span>
+                                            Default
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio">
+                                            <input type="radio" class="info" checked>
+                                            <span></span>
+                                            Info
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio">
+                                            <input type="radio" class="success" checked>
+                                            <span></span>
+                                            Success
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio">
+                                            <input type="radio" class="warning" checked>
+                                            <span></span>
+                                            Warning
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="radio">
+                                            <input type="radio" class="danger" checked>
+                                            <span></span>
+                                            Danger
+                                        </label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-12"> 
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        Toggles
+                                    </div>
+                                    <div class="panel-body">
+                                        <!-- Rounded switch -->
+                                        <label class="switch switch-lg">
+                                          <input type="checkbox">
+                                          <span class="slider round"></span>
+                                        </label>
+                                        <label class="switch dark">
+                                          <input type="checkbox" checked>
+                                          <span class="slider round"></span>
+                                        </label>
+                                        <label class="switch switch-sm info">
+                                          <input type="checkbox" checked>
+                                          <span class="slider round"></span>
+                                        </label>
+
+                                        <!-- Rectangular switch -->
+                                        <label class="switch switch-lg success">
+                                          <input type="checkbox" checked>
+                                          <span class="slider"></span>
+                                        </label>
+
+                                        <label class="switch warning">
+                                          <input type="checkbox" checked>
+                                          <span class="slider"></span>
+                                        </label>
+
+                                        <label class="switch switch-sm danger">
+                                          <input type="checkbox" checked>
+                                          <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        jQuery Knobs
+
+                                         <div class="panel-options">
+                                            <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                            <a class="panel-close"><i class="fa fa-times"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="list-inline">
+                                            <li>
+                                                <input class="knob" data-width="125" data-height="125" data-min="-100" data-displayprevious="true" value="44" data-fgcolor="#314557" >
+                                            </li>
+                                            <li class="text-center">
+                                                <input class="knob" data-width="125" data-height="125" data-cursor="true" data-fgcolor="#0ec8a2" data-thickness=".3" value="29">
+                                            </li>
+                                            <li class="text-center">
+                                                <input class="knob" data-width="75" data-height="75" data-displayinput="false" value="35" data-fgcolor="#f95858" data-linecap=round >
+                                            </li>
+                                            <li>
+                                                <input class="knob" data-width="75" data-height="75" data-angleoffset="-125" data-anglearc="250" data-fgcolor="#fda737" data-rotation="anticlockwise" value="35">
+                                            </li>
+                                            <li>
+                                                <input class="knob" data-width="50" data-height="50" data-displayprevious="true" data-fgcolor="#0ec8a2" data-skin="tron" data-thickness=".2" value="75">
+                                            </li>
+                                            <li>
+                                                <input class="knob" data-width="50" data-height="50" data-angleoffset="180" data-fgcolor="#2da9e9" data-skin="tron" data-thickness=".1" value="35">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                noUiSlider
+
+                                 <div class="panel-options">
+                                    <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                    <a class="panel-close"><i class="fa fa-times"></i></a>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div id="vertical-slider"></div>
+                                <div id="horizontal-sliders">
+                                    <div class="v-spacing-md"></div>
+                                    <h5> Basic horizontal slider </h5>
+                                    <div id="connect"></div>
+                                    <div class="v-spacing-lg"></div>
+                                    <h5> Horizontal slider with inputs</h5>
+                                    <div class="example form-group">
+                                        <div id="html5"></div>
+                                        <select id="input-select" class="form-control vcentered"><option> 1 </option><option> 2 </option></select>
+                                        <input type="number" class="form-control vcentered" min="-20" max="40" step="1" id="input-number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <p> <b> All rights reserved </b> &copy;Dauphin Premium 2017 </p>
+        </div>
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Main content-->
+
+    <div class="scripts">
+
+        <!-- Addons -->
+        <script src="addons/jquery/jquery.min.js"></script>
+        <script src="addons/jquery-ui/jquery-ui.min.js"></script>
+        <script src="addons/bootstrap/js/bootstrap.min.js"></script>
+        <script src="addons/fullcalendar/lib/moment.min.js"></script>
+        <script src="addons/pacejs/pace.min.js"></script>
+
+        <!-- Dauphin scripts -->
+        <script src="addons/dauphin.js"></script>
+
+         <!-- Current page scripts -->
+        <div class="current-scripts">
+
+            <!-- Current page addons -->
+            <script src="addons/jQuery-Knob-master/jquery.knob.min.js"></script>
+            <script src="addons/noUiSlider/nouislider.min.js"></script>
+            
+            <!-- Knobs -->
+            <script>
+                $(function($) {
+
+                    $(".knob").knob({
+                        change : function (value) {
+                            //console.log("change : " + value);
+                        },
+                        release : function (value) {
+                            //console.log(this.$.attr('value'));
+                            console.log("release : " + value);
+                        },
+                        cancel : function () {
+                            console.log("cancel : ", this);
+                        },
+                        /*format : function (value) {
+                         return value + '%';
+                         },*/
+                        draw : function () {
+
+                            // "tron" case
+                            if(this.$.data('skin') == 'tron') {
+
+                                this.cursorExt = 0.3;
+
+                                var a = this.arc(this.cv)  // Arc
+                                        , pa                   // Previous arc
+                                        , r = 1;
+
+                                this.g.lineWidth = this.lineWidth;
+
+                                if (this.o.displayPrevious) {
+                                    pa = this.arc(this.v);
+                                    this.g.beginPath();
+                                    this.g.strokeStyle = this.pColor;
+                                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+                                    this.g.stroke();
+                                }
+
+                                this.g.beginPath();
+                                this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+                                this.g.stroke();
+
+                                this.g.lineWidth = 2;
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.o.fgColor;
+                                this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                                this.g.stroke();
+
+                                return false;
+                            }
+                        }
+                    });
+
+                    // Example of infinite knob, iPod click wheel
+                    var v, up=0,down=0,i=0
+                            ,$idir = $("div.idir")
+                            ,$ival = $("div.ival")
+                            ,incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); }
+                            ,decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
+
+                });
+            </script>
+
+            <!-- Sliders -->
+            <script>
+                // Vertical slider
+                var range = document.getElementById('vertical-slider');
+
+                    noUiSlider.create(range, {
+                        start: [ 20, 80 ], // Handle start position
+                        step: 10, // Slider moves in increments of '10'
+                        margin: 20, // Handles must be more than '20' apart
+                        connect: true, // Display a colored bar between the handles
+                        direction: 'rtl', // Put '0' at the bottom of the slider
+                        orientation: 'vertical', // Orient the slider vertically
+                        behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+                        range: { // Slider can select '0' to '100'
+                            'min': 0,
+                            'max': 100
+                        },
+                        pips: { // Show a scale with the slider
+                            mode: 'steps',
+                            density: 2
+                        }
+                });
+
+
+                // Horizontal slider 
+                var connectSlider = document.getElementById('connect');
+
+                    noUiSlider.create(connectSlider, {
+                        start: [20, 80],
+                        connect: false,
+                        range: {
+                            'min': 0,
+                            'max': 100
+                        }
+                    });
+
+                    var connectBar = document.createElement('div'),
+                    connectBase = connectSlider.querySelector('.noUi-base');
+
+                // Give the bar a class for styling and add it to the slider.
+                connectBar.className += 'connect';
+                connectBase.appendChild(connectBar);
+
+                connectSlider.noUiSlider.on('update', function( values, handle, a, b, handlePositions ) {
+
+                    var offset = handlePositions[handle];
+
+                    // Right offset is 100% - left offset
+                    if ( handle === 1 ) {
+                        offset = 100 - offset;
+                    }
+
+                    // Pick left for the first handle, right for the second.
+                    connectBar.style[handle ? 'right' : 'left'] = offset + '%';
+                });
+    
+            </script>
+
+     
+            <!-- Horizontal input slide -->
+            <script>
+                var select = document.getElementById('input-select');
+
+                // Append the option elements
+                for ( var i = -20; i <= 40; i++ ){
+
+                    var option = document.createElement("option");
+                        option.text = i;
+                        option.value = i;
+
+                    select.appendChild(option);
+                }
+            </script>           
+            <script>
+                var html5Slider = document.getElementById('html5');
+
+                noUiSlider.create(html5Slider, {
+                    start: [ 10, 30 ],
+                    connect: true,
+                    range: {
+                        'min': -20,
+                        'max': 40
+                    }
+                });
+            </script>           
+            <script>
+                var inputNumber = document.getElementById('input-number');
+
+                html5Slider.noUiSlider.on('update', function( values, handle ) {
+
+                    var value = values[handle];
+
+                    if ( handle ) {
+                        inputNumber.value = value;
+                    } else {
+                        select.value = Math.round(value);
+                    }
+                });
+
+                select.addEventListener('change', function(){
+                    html5Slider.noUiSlider.set([this.value, null]);
+                });
+
+                inputNumber.addEventListener('change', function(){
+                    html5Slider.noUiSlider.set([null, this.value]);
+                });
+            </script>
+        </div>
+    </div>
+
+</body>
+
+</html>

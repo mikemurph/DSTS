@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dauphin - Premium Responsive Bootstrap Admin Template</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-heigh">
+    <link rel="shortcut icon" href="images/favicon.png"/>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
+    
+    <!-- Styling -->
+    <link rel="stylesheet" href="addons/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="addons/toastr/toastr.min.css"/>
+    <link rel="stylesheet" href="addons/fontawesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="addons/ionicons/css/ionicons.css"/>
+    <link rel="stylesheet" href="addons/noUiSlider/nouislider.min.css"/>
+
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/theme-blue.css" class="theme"/>
+
+    <!-- End of Styling -->
+</head>
+<body class="hold-transition">
+
+    <!-- Header -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div id="navbar" class="navbar-collapse">
+            	<ul class="breadcrumb">
+        			<li class="breadcrumb-home"><a href=""><i class="fa fa-home"></i></a>
+        		</ul>
+                <ul class="nav navbar-nav navbar-right">
+                	<li>
+			            <form class="search-form form-group has-feedback">
+		            		<span class="fa fa-search form-control-feedback"></span>
+		            		<input type="text" class="form-control" name="search" id="search" placeholder="Search...">
+			            </form> 
+                	</li>
+                    <li class="dropdown" id="notifications-toggle">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+                        	<i class="fa fa-bell"></i>
+                            <span class="label label-danger notification-label">2</span>
+                        </a>
+                        <ul class="list-unstyled notifications dropdown-menu">
+                        	<li>
+                        		<img alt="" class="img-circle small-image vcentered" src="images/profile2.png">
+                        		<span class="notification-title vcentered"> 
+                        			<b> Elon Musk </b> has created an <b> administrator </b> account two times already.
+                        		</span>
+                        		<span class="notification-time text-muted">  15m ago </span>
+                        	</li>
+                        	<li>
+                        		<i class="fa fa-refresh small-icon text-center vcentered"></i>
+                        		<span class="notification-title vcentered"> 
+                        			<b> Device Boo_71 </b> has been restarted.
+                        		</span>
+                        		<span class="notification-time text-muted">  2h ago </span>
+                        	</li>
+                        	<li>
+                        		<i class="fa fa-plus-square small-icon text-center vcentered"></i>
+                        		<span class="notification-title vcentered"> 
+                        			<b> Device Boo_72 </b> has been added.
+                        		</span>
+                        		<span class="notification-time text-muted">  3h ago </span>
+                        	</li>
+                        </ul>
+                    </li>
+                    <li>
+                    	<a href="login.html">
+                        	<i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                    <li class="profile">
+                        <a href="profile.html">
+                            <img alt="" src="images/profile.png" class="img-circle">
+                            <div class="vcentered">
+	                            <p class="profile-name">Dennis Novac</p>
+	                            <p class="profile-position">Web Developer</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Header -->
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <a class="navbar-brand">
+            <img alt="" class="logo vcentered" src="images/logo.png">
+            <span class="vcentered">OFAC 2.0</span>
+            <i class="fa fa-bars text-primary left-nav-toggle pull-right vcentered"></i>
+        </a>
+        <ul class="nav primary">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-tasks"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="messages.html">
+                    <i class="fa fa-envelope"></i>
+                    <span>Messages</span>
+                    <span class="label label-warning left-nav-label"> 24</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#elements" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-puzzle-piece"></i>
+                    <span> Elements </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="elements" class="nav nav-item collapse">
+                    <li>
+                        <a href="typography.html"> 
+                            <i class="fa fa-text-height"></i>
+                            <span> Typography </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="panels.html"> 
+                            <i class="fa fa-square-o"></i>
+                            <span> Panels </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="draggable.html"> 
+                            <i class="fa fa-reorder"></i>
+                            <span> Draggable </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tabs.html"> 
+                            <i class="fa fa-clone"></i>
+                            <span> Tabs </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buttons.html"> 
+                            <i class="fa fa-flask"></i>
+                            <span> Buttons </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="icons.html"> 
+                            <i class="fa fa-magic"></i>
+                            <span> Icons </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="fa fa-warning"></i>
+                            <span> Notifications </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="progressbars.html"> 
+                            <i class="fa fa-external-link-square"></i>
+                            <span> Progress bars </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="grid.html"> 
+                            <i class="fa fa-th-large"></i>
+                            <span> Bootstrap Grid </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <i class="fa fa-calendar"></i>
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="tables.html">
+                    <i class="fa fa-plus-square-o"></i>
+                    <span>Tables</span>
+                </a>
+            </li>
+            <li>
+                <a href="forms.html">
+                    <i class="fa fa-scissors"></i>
+                    <span>Forms</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#charts" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-area-chart"></i>
+                    <span> Charts </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="charts" class="nav nav-item collapse">
+                    <li>
+                        <a href="chartjs.html"> 
+                            <i class="fa fa-bar-chart"></i>
+                            <span> Chart.js </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="morrisjs.html"> 
+                            <i class="fa fa-line-chart"></i>
+                            <span> Morris.js Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="flot.html"> 
+                            <i class="fa fa-pie-chart"></i>
+                            <span> Flot Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rickshaw.html"> 
+                            <i class="fa fa-signal"></i>
+                            <span> Rickshaw Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sparkline.html"> 
+                            <i class="ion ion-arrow-graph-up-right"></i>
+                            <span> Sparkline Charts </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="metrics.html">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>Metrics</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#maps" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-map-o"></i>
+                    <span> Maps </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="maps" class="nav nav-item collapse">
+                    <li>
+                        <a href="googlemaps.html"> 
+                            <i class="fa fa-google"></i>
+                            <span> Google Maps </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mapael.html"> 
+                            <i class="fa fa-map-pin"></i>
+                            <span> Mapael </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#menu-levels" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-sort-amount-asc"></i>
+                    <span> Menu levels </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="menu-levels" class="nav nav-item collapse">
+                    <li class="nav-item-expandable">
+                        <a href="#menu-levels-1" data-toggle="collapse" aria-expanded="false"> 
+                            <i class="fa fa-sort"></i>
+                            <span> Menu expandable</span>
+                            <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                        </a>
+                        <ul id="menu-levels-1" class="nav nav-item-secondary collapse">
+                            <li>
+                                <a> 
+                                    <i class="fa fa-star" href="#"></i>
+                                    <span> Sub-menu element</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a> 
+                                    <i class="fa fa-star-o" href="#"></i>
+                                    <span> Sub-menu element 2 </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a> 
+                            <i class="fa fa-search" href="#"></i>
+                            <span> Menu element </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#pages" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-flash"></i>
+                    <span> Pages </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="pages" class="nav nav-item collapse">
+                    <li>
+                        <a href="404.html"> 
+                            <i class="fa fa-code"></i>
+                            <span> 404 </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sample.html"> 
+                            <i class="fa fa-check-circle-o"></i>
+                            <span> Sample page </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html"> 
+                            <i class="fa fa-user-o"></i>
+                            <span> Login </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html"> 
+                            <i class="fa fa-user-plus"></i>
+                            <span> Register </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html"> 
+                            <i class="fa fa-user"></i>
+                            <span> Profile </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dragdrop.html"> 
+                            <i class="fa fa-window-restore"></i>
+                            <span> Drag &amp; Drop </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documents.html"> 
+                            <i class="fa fa-file-o"></i>
+                            <span> Documents </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="time text-center">
+            <h5 class="current-time2">&nbsp;</h5>
+            <h5 class="current-time">&nbsp;</h5>
+        </div>
+    </div>
+    <!-- End of Navigation -->
+
+    <!-- Scroll up button -->
+    <a class="scroll-up"><i class="fa fa-chevron-up"></i></a>
+    <!-- End of scroll up button -->
+
+    <!-- Main content-->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-8 col-xs-12">
+                            <div class="panel main-metric no-margin-top">
+                                <div class="metric-left">
+                                    <div class="metric-panel text-left">
+                                        <div class="metric-text">
+                                            <h4> Visitors this month: </h4>
+                                            <h2> 59 734 </h2>
+                                        </div>
+
+                                        <div class="progress progress-sm">
+                                            <div style="width: 80%" class="progress-bar progress-bar-success"></div>
+                                        </div>
+                                        <h6> <i class="fa fa-caret-up text-success"></i>  80% higher than previous month</h6>
+                                    </div>
+                                </div>
+                                
+                                <div class="metric-right">
+                                    <i class="fa fa-eye text-success"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-4 col-xs-12">
+                            <div class="panel metric no-margin-top">
+                                <div class="metric-panel no-padding-top" style="min-height: 94px;">
+                                    <div class="metrics-text row">
+                                        <h5 class="col-xs-12 no-margin-top">
+                                            <b class="pull-left">Server 1:</b>
+                                            <span class="label label-success pull-right"> 35% Full </span>
+                                        </h5>
+                                        <h5 class="col-xs-12"> 
+                                            <b class="pull-left">Server 2:</b>
+                                            <span class="label label-warning pull-right"> 40% Full </span>
+                                        </h5>
+                                        <h5 class="col-xs-12 no-margin-bottom"> 
+                                            <b class="pull-left">Server 3:</b>
+                                            <span class="label label-danger pull-right"> 25% Full </span>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="metric-footer">
+                                    <div class="progress progress-sm progress-striped no-margin active">
+                                        <div style="width: 35%" class="progress-bar progress-bar-success">
+                                        </div>
+                                        <div style="width: 40%" class="progress-bar progress-bar-warning">
+                                        </div>
+                                        <div style="width: 25%" class="progress-bar progress-bar-danger">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    Sales this month
+                                </div>
+                                <div class="panel-body">
+                                    <div id="area-chart" style="height: 200px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="panel panel-info-outline tabs-panel">
+                        <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#dashboard-personal" aria-expanded="true"> Personal </a></li>
+                                <li class=""><a data-toggle="tab" href="#dashboard-feed" aria-expanded="false"> Feed </a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <ul class="list-unstyled notifications notifications-panel no-border no-margin-bottom tab-pane active" id="dashboard-personal">
+                                <li>
+                                    <img alt="" class="img-circle small-image vcentered" src="images/profile2.png">
+                                    <div class="notification-title vcentered info-combo"> 
+                                        <h4 class="no-margin-top"> Elon Musk </h4>
+                                        <h6 class="no-margin text-muted"> Entrepreneur </h6>
+                                    </div>
+                                    <span class="notification-time text-success">  active </span>
+                                </li>
+                                <li>
+                                    <img alt="" class="img-circle small-image vcentered info-combo" src="images/profile3.png">
+                                    <div class="notification-title vcentered info-combo"> 
+                                        <h4 class="no-margin-top"> Jonathan Ive </h4>
+                                        <h6 class="no-margin text-muted"> Chief Designer </h6>
+                                    </div>
+                                    <span class="notification-time text-muted">  offline </span>
+                                </li>
+                                <li>
+                                    <img alt="" class="img-circle small-image vcentered" src="images/profile9.png">
+                                    <div class="notification-title vcentered info-combo"> 
+                                        <h4 class="no-margin-top"> Pavel Durov </h4>
+                                        <h6 class="no-margin text-muted"> Entrepreneur </h6>
+                                    </div>
+                                    <span class="notification-time text-warning">  away </span>
+                                </li>
+                                <li>
+                                    <img alt="" class="img-circle small-image vcentered" src="images/profile8.png">
+                                    <div class="notification-title vcentered info-combo"> 
+                                        <h4 class="no-margin-top">Jeff Williams </h4>
+                                        <h6 class="no-margin text-muted"> Chief Opperating Officer </h6>
+                                    </div>
+                                    <span class="notification-time text-warning">  away </span>
+                                </li>
+                                <li>
+                                    <img alt="" class="img-circle small-image vcentered" src="images/profile5.png">
+                                    <div class="notification-title vcentered info-combo"> 
+                                        <h4 class="no-margin-top"> Mark Zuckerberg </h4>
+                                        <h6 class="no-margin text-muted"> Senior Developer </h6>
+                                    </div>
+                                    <span class="notification-time text-success">  active </span>
+                                </li>
+                                <li>
+                                    <img alt="" class="img-circle small-image vcentered" src="images/profile4.png">
+                                    <div class="notification-title vcentered info-combo"> 
+                                        <h4 class="no-margin-top"> Evan Williams </h4>
+                                        <h6 class="no-margin text-muted"> Senior Developer </h6>
+                                    </div>
+                                    <span class="notification-time text-muted">  offline </span>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled notifications notifications-panel no-border no-margin-bottom tab-pane" id="dashboard-feed">
+                                <li>
+                                    <i class="fa fa-upload small-icon text-center vcentered"></i>
+                                    <div class="notification-title vcentered"> 
+                                        <b> Server 1 </b> has been successfully updated.
+                                    </div>
+                                    <span class="notification-time text-muted">  6m ago </span>
+                                </li>
+                                <li>
+                                    <img alt="" class="img-circle small-image vcentered" src="images/profile5.png">
+                                    <div class="notification-title vcentered"> 
+                                        <b> Mark Zuckerberg </b> has fixed <b> 3 </b> important bugs.
+                                    </div>
+                                    <span class="notification-time text-muted">  12m ago </span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-refresh small-icon text-center vcentered"></i>
+                                    <div class="notification-title vcentered"> 
+                                        <b> Server 2 </b> has been successfully restarted.
+                                    </div>
+                                    <span class="notification-time text-muted">  25m ago </span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-desktop small-icon text-center text-warning vcentered"></i>
+                                    <div class="notification-title vcentered"> 
+                                        <b class="text-warning"> Server 4 </b> was suspended.
+                                    </div>
+                                    <span class="notification-time text-muted">  2h ago </span>
+                                </li>
+                                <li>
+                                    <img alt="" class="img-circle small-image vcentered" src="images/profile4.png">
+                                    <div class="notification-title vcentered"> 
+                                        <b> Evan Williams </b> has become a <b> senior developer </b>.
+                                    </div>
+                                    <span class="notification-time text-muted">  3h ago </span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user small-icon text-center text-success vcentered"></i>
+                                    <div class="notification-title vcentered"> 
+                                        <b class="text-success"> 398 </b> new users have registred.
+                                    </div>
+                                    <span class="notification-time text-muted">  5h ago </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-6">
+                            <div class="weather-metric info">
+                                <div class="metric-left">
+                                    <div class="metric-panel text-left">
+                                        <div class="metric-text info-combo">
+                                            <h2> Tokyo </h2>
+                                            <h4> Japan </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="metric-right">
+                                    <i class="ion ion-ios-snowy vcentered"></i>
+                                    <h3 class="weather-metric-temperature vcentered"> -2 <span class="degrees">&deg;C</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-6">
+                            <div class="weather-metric success">
+                                <div class="metric-left">
+                                    <div class="metric-panel text-left">
+                                        <div class="metric-text info-combo">
+                                            <h2> London </h2>
+                                            <h4> Great Britain </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="metric-right">
+                                    <i class="fa fa-leaf vcentered"></i>
+                                    <h3 class="weather-metric-temperature vcentered"> 14 <span class="degrees">&deg;C</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-6">
+                            <div class="weather-metric warning">
+                                <div class="metric-left">
+                                    <div class="metric-panel text-left">
+                                        <div class="metric-text info-combo">
+                                            <h2> Seattle </h2>
+                                            <h4> U.S.A </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="metric-right">
+                                    <i class="fa fa-sun-o vcentered"></i>
+                                    <h3 class="weather-metric-temperature vcentered"> 25 <span class="degrees">&deg;C</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Team</th>
+                                                <th>Members</th>
+                                                <th>Office</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>UX Development</td>
+                                                <td>33</td>
+                                                <td>Tokyo</td>
+                                                <td>
+                                                    <h6 class="no-margin text-success">done</h6>
+                                                    <div class="progress progress-sm progress-striped no-margin">
+                                                        <div style="width: 100%" class="progress-bar progress-bar-success">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>UI Development</td>
+                                                <td>47</td>
+                                                <td>London</td>
+                                                <td>
+                                                    <h6 class="no-margin text-success">done</h6>
+                                                    <div class="progress progress-sm progress-striped no-margin">
+                                                        <div style="width: 100%" class="progress-bar progress-bar-success">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Frond End</td>
+                                                <td>66</td>
+                                                <td>Seattle</td>
+                                                <td>
+                                                    <h6 class="no-margin text-muted">46%</h6>
+                                                    <div class="progress progress-sm progress-striped no-margin">
+                                                        <div style="width: 46%" class="progress-bar progress-bar-warning">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Back End</td>
+                                                <td>41</td>
+                                                <td>London</td>
+                                                <td>
+                                                    <h6 class="no-margin text-muted">86%</h6>
+                                                    <div class="progress progress-sm progress-striped active no-margin">
+                                                        <div style="width: 86%" class="progress-bar progress-bar-info">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Testers</td>
+                                                <td>16</td>
+                                                <td>London</td>
+                                                <td>
+                                                    <h6 class="no-margin text-muted">unvailable</h6>
+                                                    <div class="progress progress-sm  no-margin">
+                                                        <div style="width: 0" class="progress-bar progress-bar-success">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Tasks
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li> 
+                                    <h4> 
+                                        Calendar plugin
+                                        <span class="label label-success"> done </span>
+                                    </h4>
+                                    <ul>
+                                        <li> Update design </li>
+                                        <li> Improve code </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Images upload plugin 
+                                        <span class="label label-success"> done </span>
+                                    </h4>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Find 2 more UI designers
+                                        <span class="label label-muted"> default </span>
+                                    </h4>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Sessions algorithm 
+                                        <span class="label label-warning"> important </span>
+                                    </h4>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Update graphs
+                                        <span class="label label-warning"> important </span>
+                                    </h4>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Update labels
+                                        <span class="label label-success"> done </span>
+                                    </h4>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Test calendar plugin
+                                        <span class="label label-success"> done </span>
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <p> <b> All rights reserved </b> &copy;Dauphin Premium 2017 </p>
+        </div>
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Main content-->
+
+    <div class="scripts">
+
+        <!-- Addons -->
+        <script src="addons/jquery/jquery.min.js"></script>
+        <script src="addons/jquery-ui/jquery-ui.min.js"></script>
+        <script src="addons/bootstrap/js/bootstrap.min.js"></script>
+        <script src="addons/fullcalendar/lib/moment.min.js"></script>
+        <script src="addons/pacejs/pace.min.js"></script>
+
+        <!-- Dauphin scripts -->
+        <script src="addons/dauphin.js"></script>
+
+        <!-- Current page scripts -->
+        <div class="current-scripts">
+
+            <!-- Current page addons -->
+            <link rel="stylesheet" href="addons/morrisjs/morris.css"/>
+            <script src="addons/morrisjs/raphael-min.js"></script>
+            <script src="addons/morrisjs/morris.min.js"></script>
+
+            <link rel="stylesheet" href="addons/fullcalendar/fullcalendar.css"/>
+            <script src="addons/fullcalendar/lib/moment.min.js"></script>
+            <script src="addons/fullcalendar/fullcalendar.min.js"></script>
+
+            <!-- Charts -->
+            <script>
+
+                // Sales this month chart
+                var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+                var data = [
+                  { y: '2017-01', a: 210, b: 90},
+                  { y: '2017-02', a: 165, b: 75},
+                  { y: '2017-03', a: 250, b: 50},
+                  { y: '2017-04', a: 375, b: 160},
+                  { y: '2017-05', a: 280, b: 65},
+                  { y: '2017-06', a: 390, b: 170},
+                  { y: '2017-07', a: 400, b: 75},
+                  { y: '2017-08', a: 315, b: 175},
+                  { y: '2017-09', a: 220, b: 85},
+                  { y: '2017-11', a: 345, b: 85},
+                  { y: '2017-12', a: 360, b: 95}
+                ],
+                config = {
+                  data: data,
+                  xkey: 'y',
+                  ykeys: ['a', 'b'],
+                  labels: ['Total clients', 'Total sales'],
+                  fillOpacity: 0.6,
+                  hideHover: 'auto',
+                  behaveLikeLine: true,
+                  resize: true,
+                  pointFillColors:['#ffffff'],
+                  pointStrokeColors: ['#2da9e9'],
+                  lineColors:['#2da9e9','#0ec8a2'],
+                  barColors:['#2da9e9','#0ec8a2'],
+                  xLabelFormat: function(x) { // <--- x.getMonth() returns valid index
+                    var month = months[x.getMonth()];
+                    return month;
+                  },
+                  dateFormat: function(x) {
+                    var month = months[new Date(x).getMonth()];
+                    return month;
+                  }
+                }
+
+                config.element = 'area-chart';
+                Morris.Area(config);
+            </script>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

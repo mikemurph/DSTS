@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dauphin - Premium Responsive Bootstrap Admin Template - Drag &amp; Drop</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
+    
+    <!-- Styling -->
+    <link rel="stylesheet" href="addons/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="addons/toastr/toastr.min.css"/>
+    <link rel="stylesheet" href="addons/fontawesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="addons/ionicons/css/ionicons.css"/>
+    <link rel="stylesheet" href="addons/noUiSlider/nouislider.min.css"/>
+
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/theme-blue.css" class="theme"/>
+    <link rel="stylesheet" href="styles/theme-blue.css" class="theme"/>
+
+    <!-- End of Styling -->
+</head>
+<body class="hold-transition">
+
+    <!-- Header -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div id="navbar" class="navbar-collapse">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-home"><a href=""><i class="fa fa-home"></i></a>
+                    <li class="active"><a href=""> Drag &amp; Drop</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="search-form form-group has-feedback">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" name="search" id="search" placeholder="Search...">
+                        </form> 
+                    </li>
+                    <li class="dropdown" id="notifications-toggle">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+                            <i class="fa fa-bell"></i>
+                            <span class="label label-danger notification-label">2</span>
+                        </a>
+                        <ul class="list-unstyled notifications dropdown-menu">
+                            <li>
+                                <img alt="" class="img-circle small-image vcentered" src="images/profile2.png">
+                                <span class="notification-title vcentered"> 
+                                    <b> Elon Musk </b> has created an <b> administrator </b> account two times already.
+                                </span>
+                                <span class="notification-time text-muted">  15m ago </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-refresh small-icon text-center vcentered"></i>
+                                <span class="notification-title vcentered"> 
+                                    <b> Device Boo_71 </b> has been restarted.
+                                </span>
+                                <span class="notification-time text-muted">  2h ago </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-plus-square small-icon text-center vcentered"></i>
+                                <span class="notification-title vcentered"> 
+                                    <b> Device Boo_72 </b> has been added.
+                                </span>
+                                <span class="notification-time text-muted">  3h ago </span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                    <li class="profile">
+                        <a href="profile.html">
+                            <img alt="" src="images/profile.png" class="img-circle">
+                            <div class="vcentered">
+                                <p class="profile-name">Dennis Novac</p>
+                                <p class="profile-position">Web Developer</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Header -->
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <a class="navbar-brand">
+            <img alt="" class="logo vcentered" src="images/logo.png">
+            <span class="vcentered">Dauphin</span>
+            <i class="fa fa-bars text-primary left-nav-toggle pull-right vcentered"></i>
+        </a>
+        <ul class="nav primary">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-tasks"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="messages.html">
+                    <i class="fa fa-envelope"></i>
+                    <span>Messages</span>
+                    <span class="label label-warning left-nav-label"> 24</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#elements" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-puzzle-piece"></i>
+                    <span> Elements </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="elements" class="nav nav-item collapse">
+                    <li>
+                        <a href="typography.html"> 
+                            <i class="fa fa-text-height"></i>
+                            <span> Typography </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="panels.html"> 
+                            <i class="fa fa-square-o"></i>
+                            <span> Panels </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="draggable.html"> 
+                            <i class="fa fa-reorder"></i>
+                            <span> Draggable </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tabs.html"> 
+                            <i class="fa fa-clone"></i>
+                            <span> Tabs </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buttons.html"> 
+                            <i class="fa fa-flask"></i>
+                            <span> Buttons </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="icons.html"> 
+                            <i class="fa fa-magic"></i>
+                            <span> Icons </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="fa fa-warning"></i>
+                            <span> Notifications </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="progressbars.html"> 
+                            <i class="fa fa-external-link-square"></i>
+                            <span> Progress bars </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="grid.html"> 
+                            <i class="fa fa-th-large"></i>
+                            <span> Bootstrap Grid </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <i class="fa fa-calendar"></i>
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="tables.html">
+                    <i class="fa fa-plus-square-o"></i>
+                    <span>Tables</span>
+                </a>
+            </li>
+            <li>
+                <a href="forms.html">
+                    <i class="fa fa-scissors"></i>
+                    <span>Forms</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#charts" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-area-chart"></i>
+                    <span> Charts </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="charts" class="nav nav-item collapse">
+                    <li>
+                        <a href="chartjs.html"> 
+                            <i class="fa fa-bar-chart"></i>
+                            <span> Chart.js </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="morrisjs.html"> 
+                            <i class="fa fa-line-chart"></i>
+                            <span> Morris.js Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="flot.html"> 
+                            <i class="fa fa-pie-chart"></i>
+                            <span> Flot Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rickshaw.html"> 
+                            <i class="fa fa-signal"></i>
+                            <span> Rickshaw Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sparkline.html"> 
+                            <i class="ion ion-arrow-graph-up-right"></i>
+                            <span> Sparkline Charts </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="metrics.html">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>Metrics</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#maps" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-map-o"></i>
+                    <span> Maps </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="maps" class="nav nav-item collapse">
+                    <li>
+                        <a href="googlemaps.html"> 
+                            <i class="fa fa-google"></i>
+                            <span> Google Maps </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mapael.html"> 
+                            <i class="fa fa-map-pin"></i>
+                            <span> Mapael </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#menu-levels" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-sort-amount-asc"></i>
+                    <span> Menu levels </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="menu-levels" class="nav nav-item collapse">
+                    <li class="nav-item-expandable">
+                        <a href="#menu-levels-1" data-toggle="collapse" aria-expanded="false"> 
+                            <i class="fa fa-sort"></i>
+                            <span> Menu expandable</span>
+                            <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                        </a>
+                        <ul id="menu-levels-1" class="nav nav-item-secondary collapse">
+                            <li>
+                                <a> 
+                                    <i class="fa fa-star" href="#"></i>
+                                    <span> Sub-menu element</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a> 
+                                    <i class="fa fa-star-o" href="#"></i>
+                                    <span> Sub-menu element 2 </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a> 
+                            <i class="fa fa-search" href="#"></i>
+                            <span> Menu element </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#pages" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-flash"></i>
+                    <span> Pages </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="pages" class="nav nav-item collapse">
+                    <li>
+                        <a href="404.html"> 
+                            <i class="fa fa-code"></i>
+                            <span> 404 </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sample.html"> 
+                            <i class="fa fa-check-circle-o"></i>
+                            <span> Sample page </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html"> 
+                            <i class="fa fa-user-o"></i>
+                            <span> Login </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html"> 
+                            <i class="fa fa-user-plus"></i>
+                            <span> Register </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html"> 
+                            <i class="fa fa-user"></i>
+                            <span> Profile </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dragdrop.html"> 
+                            <i class="fa fa-window-restore"></i>
+                            <span> Drag &amp; Drop </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documents.html"> 
+                            <i class="fa fa-file-o"></i>
+                            <span> Documents </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="time text-center">
+            <h5 class="current-time2">&nbsp;</h5>
+            <h5 class="current-time">&nbsp;</h5>
+        </div>
+    </div>
+    <!-- End of Navigation -->
+
+    <!-- Scroll up button -->
+    <a class="scroll-up"><i class="fa fa-chevron-up"></i></a>
+    <!-- End of scroll up button -->
+
+    <!-- Main content-->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Upload new document
+
+                             <div class="panel-options">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/upload-target" class="dropzone dz-clickable">
+                                <div class="dz-default dz-message">
+                                    <img src="images/upload.png" class="dropzone-image" alt="" />
+                                    <h3 class="no-margin-bottom">Drop files here to upload</h3>
+                                    <h5 class="text-muted">or</h5>
+                                    <a class="btn btn-success" href="#"> Select files </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Upload new document
+
+                             <div class="panel-options">
+                                <a class="panel-toggle"><i class="fa fa-chevron-up"></i></a>
+                                <a class="panel-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/upload-target" class="dropzone dropzone-thin dz-clickable">
+                                <div class="dz-default dz-message">
+                                    <img src="images/upload.png" class="dropzone-image" alt="" />
+                                    <span>Drop files here to upload <br> or
+                                    <a href="#"> select files to upload</a> </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <p> <b> All rights reserved </b> &copy;Dauphin Premium 2017 </p>
+        </div>
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Main content-->
+
+    <div class="scripts">
+
+        <!-- Addons -->
+        <script src="addons/jquery/jquery.min.js"></script>
+        <script src="addons/jquery-ui/jquery-ui.min.js"></script>
+        <script src="addons/bootstrap/js/bootstrap.min.js"></script>
+        <script src="addons/fullcalendar/lib/moment.min.js"></script>
+        <script src="addons/pacejs/pace.min.js"></script>
+
+        <!-- Dauphin scripts -->
+        <script src="addons/dauphin.js"></script>
+
+        <!-- Current page scripts -->
+        <div class="current-scripts">
+        <script src="addons/dropzone/dropzone.js"></script>
+
+            <!-- Charts -->
+            <script type="text/javascript"></script>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

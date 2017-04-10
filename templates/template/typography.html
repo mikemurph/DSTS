@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dauphin - Premium Responsive Bootstrap Admin Template - Typography</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.png"/>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
+    
+    <!-- Styling -->
+    <link rel="stylesheet" href="addons/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="addons/toastr/toastr.min.css"/>
+    <link rel="stylesheet" href="addons/fontawesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="addons/ionicons/css/ionicons.css"/>
+    <link rel="stylesheet" href="addons/noUiSlider/nouislider.min.css"/>
+
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/theme-blue.css" class="theme"/>
+
+    <!-- End of Styling -->
+</head>
+<body class="hold-transition">
+
+    <!-- Header -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div id="navbar" class="navbar-collapse">
+            	<ul class="breadcrumb">
+        			<li class="breadcrumb-home"><a href=""><i class="fa fa-home"></i></a>
+        			<li><a href="">Elements</a></li>
+                    <li class="active"><a href="">Typography</a></li>
+        		</ul>
+                <ul class="nav navbar-nav navbar-right">
+                	<li>
+			            <form class="search-form form-group has-feedback">
+		            		<span class="fa fa-search form-control-feedback"></span>
+		            		<input type="text" class="form-control" name="search" id="search" placeholder="Search...">
+			            </form> 
+                	</li>
+                    <li class="dropdown" id="notifications-toggle">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+                        	<i class="fa fa-bell"></i>
+                            <span class="label label-danger notification-label">2</span>
+                        </a>
+                        <ul class="list-unstyled notifications dropdown-menu">
+                        	<li>
+                        		<img alt="" class="img-circle small-image vcentered" src="images/profile2.png">
+                        		<span class="notification-title vcentered"> 
+                        			<b> Elon Musk </b> has created an <b> administrator </b> account two times already.
+                        		</span>
+                        		<span class="notification-time text-muted">  15m ago </span>
+                        	</li>
+                        	<li>
+                        		<i class="fa fa-refresh small-icon text-center vcentered"></i>
+                        		<span class="notification-title vcentered"> 
+                        			<b> Device Boo_71 </b> has been restarted.
+                        		</span>
+                        		<span class="notification-time text-muted">  2h ago </span>
+                        	</li>
+                        	<li>
+                        		<i class="fa fa-plus-square small-icon text-center vcentered"></i>
+                        		<span class="notification-title vcentered"> 
+                        			<b> Device Boo_72 </b> has been added.
+                        		</span>
+                        		<span class="notification-time text-muted">  3h ago </span>
+                        	</li>
+                        </ul>
+                    </li>
+                    <li>
+                    	<a href="login.html">
+                        	<i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                    <li class="profile">
+                        <a href="profile.html">
+                            <img alt="" src="images/profile.png" class="img-circle">
+                            <div class="vcentered">
+	                            <p class="profile-name">Dennis Novac</p>
+	                            <p class="profile-position">Web Developer</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Header -->
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <a class="navbar-brand">
+            <img alt="" class="logo vcentered" src="images/logo.png">
+            <span class="vcentered">Dauphin</span>
+            <i class="fa fa-bars text-primary left-nav-toggle pull-right vcentered"></i>
+        </a>
+        <ul class="nav primary">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-tasks"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="messages.html">
+                    <i class="fa fa-envelope"></i>
+                    <span>Messages</span>
+                    <span class="label label-warning left-nav-label"> 24</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#elements" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-puzzle-piece"></i>
+                    <span> Elements </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="elements" class="nav nav-item collapse">
+                    <li>
+                        <a href="typography.html"> 
+                            <i class="fa fa-text-height"></i>
+                            <span> Typography </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="panels.html"> 
+                            <i class="fa fa-square-o"></i>
+                            <span> Panels </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="draggable.html"> 
+                            <i class="fa fa-reorder"></i>
+                            <span> Draggable </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tabs.html"> 
+                            <i class="fa fa-clone"></i>
+                            <span> Tabs </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buttons.html"> 
+                            <i class="fa fa-flask"></i>
+                            <span> Buttons </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="icons.html"> 
+                            <i class="fa fa-magic"></i>
+                            <span> Icons </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="fa fa-warning"></i>
+                            <span> Notifications </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="progressbars.html"> 
+                            <i class="fa fa-external-link-square"></i>
+                            <span> Progress bars </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="grid.html"> 
+                            <i class="fa fa-th-large"></i>
+                            <span> Bootstrap Grid </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <i class="fa fa-calendar"></i>
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="tables.html">
+                    <i class="fa fa-plus-square-o"></i>
+                    <span>Tables</span>
+                </a>
+            </li>
+            <li>
+                <a href="forms.html">
+                    <i class="fa fa-scissors"></i>
+                    <span>Forms</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#charts" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-area-chart"></i>
+                    <span> Charts </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="charts" class="nav nav-item collapse">
+                    <li>
+                        <a href="chartjs.html"> 
+                            <i class="fa fa-bar-chart"></i>
+                            <span> Chart.js </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="morrisjs.html"> 
+                            <i class="fa fa-line-chart"></i>
+                            <span> Morris.js Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="flot.html"> 
+                            <i class="fa fa-pie-chart"></i>
+                            <span> Flot Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rickshaw.html"> 
+                            <i class="fa fa-signal"></i>
+                            <span> Rickshaw Charts </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sparkline.html"> 
+                            <i class="ion ion-arrow-graph-up-right"></i>
+                            <span> Sparkline Charts </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="metrics.html">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>Metrics</span>
+                </a>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#maps" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-map-o"></i>
+                    <span> Maps </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="maps" class="nav nav-item collapse">
+                    <li>
+                        <a href="googlemaps.html"> 
+                            <i class="fa fa-google"></i>
+                            <span> Google Maps </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mapael.html"> 
+                            <i class="fa fa-map-pin"></i>
+                            <span> Mapael </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#menu-levels" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-sort-amount-asc"></i>
+                    <span> Menu levels </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="menu-levels" class="nav nav-item collapse">
+                    <li class="nav-item-expandable">
+                        <a href="#menu-levels-1" data-toggle="collapse" aria-expanded="false"> 
+                            <i class="fa fa-sort"></i>
+                            <span> Menu expandable</span>
+                            <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                        </a>
+                        <ul id="menu-levels-1" class="nav nav-item-secondary collapse">
+                            <li>
+                                <a> 
+                                    <i class="fa fa-star" href="#"></i>
+                                    <span> Sub-menu element</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a> 
+                                    <i class="fa fa-star-o" href="#"></i>
+                                    <span> Sub-menu element 2 </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a> 
+                            <i class="fa fa-search" href="#"></i>
+                            <span> Menu element </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item-expandable">
+                <a href="#pages" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-flash"></i>
+                    <span> Pages </span>
+                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
+                </a>
+                <ul id="pages" class="nav nav-item collapse">
+                    <li>
+                        <a href="404.html"> 
+                            <i class="fa fa-code"></i>
+                            <span> 404 </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sample.html"> 
+                            <i class="fa fa-check-circle-o"></i>
+                            <span> Sample page </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html"> 
+                            <i class="fa fa-user-o"></i>
+                            <span> Login </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html"> 
+                            <i class="fa fa-user-plus"></i>
+                            <span> Register </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html"> 
+                            <i class="fa fa-user"></i>
+                            <span> Profile </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dragdrop.html"> 
+                            <i class="fa fa-window-restore"></i>
+                            <span> Drag &amp; Drop </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="documents.html"> 
+                            <i class="fa fa-file-o"></i>
+                            <span> Documents </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="time text-center">
+            <h5 class="current-time2">&nbsp;</h5>
+            <h5 class="current-time">&nbsp;</h5>
+        </div>
+    </div>
+    <!-- End of Navigation -->
+
+    <!-- Scroll up button -->
+    <a class="scroll-up"><i class="fa fa-chevron-up"></i></a>
+    <!-- End of scroll up button -->
+
+    <!-- Main content-->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Headings
+                        </div>
+                        <div class="panel-body">
+                            <p>All HTML headings <kbd>&lt;h1&gt;</kbd> through <kbd>&lt;h6&gt;</kbd> are available.</p>
+                            <p>In Bootstrap the HTML <kbd>&lt;small&gt;</kbd> element is used to create a lighter, secondary text in any heading.</p> <br>
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td><h1>h1. Bootstrap heading</h1></td>
+                                    <td><h1><small>secondary</small></h1></td>
+                                </tr>
+                                <tr>
+                                    <td><h2>h2. Bootstrap heading</h2></td>
+                                    <td><h2><small>secondary</small></h2></td>
+                                </tr>
+                                <tr>
+                                    <td><h3>h3. Bootstrap heading</h3></td>
+                                    <td><h3><small>secondary</small></h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h4>h4. Bootstrap heading</h4></td>
+                                    <td><h4><small>secondary</small></h4></td>
+                                </tr>
+                                <tr>
+                                    <td><h5>h5. Bootstrap heading</h5></td>
+                                    <td><h5><small>secondary</small></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h6>h6. Bootstrap heading</h6></td>
+                                    <td><h6><small>secondary</small></h6></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Paragraph
+                        </div>
+                        <div class="panel-body">
+                            <p >
+                                And yet, somehow, did Ahab—in his own proper self, as daily, hourly, and every instant, commandingly revealed to his subordinates,—Ahab seemed an independent lord; the Parsee but his slave. Still again both seemed yoked together, and an unseen tyrant driving them; the lean shade siding the solid rib. For be this Parsee what he may, all rib and keel was solid Ahab.
+                            </p>
+                            <br>
+
+                            <h4> Another paragraph </h4>
+                            <p >
+                                And yet, somehow, did Ahab—in his own proper self, as daily, hourly, and every instant, commandingly revealed to his subordinates,—Ahab seemed an independent lord; the Parsee but his slave. Still again both seemed yoked together, and an unseen tyrant driving them; the lean shade siding the solid rib. For be this Parsee what he may, all rib and keel was solid Ahab.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6"> 
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Unordered list
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li> Coffee</li>
+                                <li> Milk</li>
+                                <li> Pasta
+                                    <ul>
+                                        <li> Pasta with chicken</li>
+                                        <li> Pasta with mushrooms</li>
+                                    </ul>
+                                </li>
+                                <li> Fruits</li>
+                                <li> Candies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6"> 
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Ordered list
+                        </div>
+                        <div class="panel-body">
+                            <ol>
+                                <li> Coffee</li>
+                                <li> Milk</li>
+                                <li> Pasta
+                                    <ol>
+                                        <li> Pasta with chicken</li>
+                                        <li> Pasta with mushrooms</li>
+                                    </ol>
+                                </li>
+                                <li> Fruits</li>
+                                <li> Candies</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6"> 
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Unstyled list
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-unstyled">
+                                <li> Coffee</li>
+                                <li> Milk</li>
+                                <li> Pasta
+                                    <ul class="list-unstyled">
+                                        <li> Pasta with chicken</li>
+                                        <li> Pasta with mushrooms</li>
+                                    </ul>
+                                </li>
+                                <li> Fruits</li>
+                                <li> Candies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6"> 
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Description list
+                        </div>
+                        <div class="panel-body">
+                            <dl>
+                              <dt>Coffee</dt>
+                              <dd>- black hot drink</dd>
+
+                              <dt>Milk</dt>
+                              <dd>- white cold drink</dd>
+
+                              <dt>Pasta</dt>
+                              <dd>- healthy food</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Contextual Colors
+                        </div>
+                        <div class="panel-body">
+                          <p class="text-muted">This text is muted. <span class="label label-muted"> 1</span></p>
+                          <p class="text-dark">This text is important. <span class="label label-dark"> 2</span></p>
+                          <p class="text-success">This text indicates success. <span class="label label-success"> 3</span></p>
+                          <p class="text-info">This text represents some information. <span class="label label-info"> 4</span></p>
+                          <p class="text-warning">This text represents a warning. <span class="label label-warning"> 5</span></p>
+                          <p class="text-danger">This text represents danger. <span class="label label-danger"> 6</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Contextual Backgrounds
+                        </div>
+                        <div class="panel-body">
+                          <p class="bg-primary">.bg-primary</p>
+                          <p class="bg-success">.bg-success</p>
+                          <p class="bg-info">.bg-info</p>
+                          <p class="bg-warning">.bg-warning</p>
+                          <p class="bg-danger">.bg-danger</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="panel">
+                        <div class="panel-heading">
+                        List group
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group no-margin-bottom">
+                                <li class="list-group-item">Coffee</li>
+                                <li class="list-group-item list-group-item-success">Milk</li>
+                                <li class="list-group-item list-group-item-info">Pasta</li>
+                                <li class="list-group-item list-group-item-warning">Fruits</li>
+                                <li class="list-group-item list-group-item-danger">Candies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Well
+                        </div>
+                        <div class="panel-body">
+                            <div class="well">
+                                <p> And yet, somehow, did Ahab—in his own proper self, as daily, hourly, and every instant.</p>
+                                <small><strong>Author name</strong> in <cite title="" data-original-title="">Book name</cite></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Blockquote
+                        </div>
+                        <div class="panel-body">
+                            <blockquote>
+                                <p> And yet, somehow, did Ahab—in his own proper self, as daily, hourly, and every instant.</p>
+                                <small><strong>Author name</strong> in <cite title="" data-original-title="">Book name</cite></small>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Text styles
+                        </div>
+                        <div class="panel-body">
+                            <p><u>This text uses the <kbd>&lt;u&gt;</kbd> tag</u></p>
+                            <p><b>This text uses the <kbd>&lt;b&gt;</kbd> tag</b></p>
+                            <p><i>This text uses the <kbd>&lt;i&gt;</kbd> tag</i></p>
+                            <p><small>This text uses the <kbd><small>&lt;small&gt;</small></kbd> tag</small></p>
+                            <p><del>This text uses the <kbd>&lt;del&gt;</kbd> tag</del></p>
+                            <p><code>This text uses the &lt;code&gt; tag</code></p>
+                            <p><kbd>This text uses the &lt;kbd&gt; tag</kbd></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Alignment
+                        </div>
+                        <div class="panel-body">
+                            <p class="text-left">Left aligned text.</p>
+                            <p class="text-center">Center aligned text.</p>
+                            <p class="text-right">Right aligned text.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4"> 
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Adress
+                        </div>
+                        <div class="panel-body">
+                          <address>
+                            <strong>Twitter, Inc.</strong><br>
+                            795 Folsom Ave, Suite 600<br>
+                            San Francisco, CA 94107<br>
+                            <abbr title="Phone">P:</abbr> (123) 456-7890
+                          </address>
+                          <address>
+                            <strong>Full Name</strong><br>
+                            <a href="mailto:#">first.last@gmail.com</a>
+                          </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <p> <b> All rights reserved </b> &copy;Dauphin Premium 2017 </p>
+        </div>
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Main content-->
+
+    <div class="scripts">
+
+        <!-- Addons -->
+        <script src="addons/jquery/jquery.min.js"></script>
+        <script src="addons/jquery-ui/jquery-ui.min.js"></script>
+        <script src="addons/bootstrap/js/bootstrap.min.js"></script>
+        <script src="addons/fullcalendar/lib/moment.min.js"></script>
+        <script src="addons/pacejs/pace.min.js"></script>
+
+        <!-- Dauphin scripts -->
+        <script src="addons/dauphin.js"></script>
+
+    </div>
+    
+</body>
+
+</html>

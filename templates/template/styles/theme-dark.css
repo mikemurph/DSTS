@@ -1,0 +1,30 @@
+.navigation,
+#login-page {
+  background-image: url('../images/backgrounds/night.png');
+}
+
+.navigation:after,
+#login-page:after {
+  background: #314557;
+  background: linear-gradient(to bottom, rgba(38,51,64,0.9) 5%, rgba(14, 25, 40, 0.8) 100%);
+}
+
+body.no-bg-img .navigation:after {
+  background-color: #314557;
+}
+
+.breadcrumb > li.breadcrumb-home > a > i,
+.search-form:hover span.form-control-feedback,
+.search-form span.form-control-feedback:focus {
+  color: #314557;
+}
+
+.search-form .form-control:hover,
+.search-form .form-control:focus {
+  border: 2px solid #314557;
+}
+
+.pace .pace-progress {
+  background: #314557;
+  background: linear-gradient(to bottom, rgba(38,51,64,0) 5%, rgba(14, 25, 40, 0.8) 100%);
+}
