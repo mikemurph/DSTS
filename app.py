@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, json, g
 
 import sqlite3 as sql
 import db_init
+import feed
 
 import time
 import atexit
@@ -17,6 +18,15 @@ from apscheduler.triggers.interval import IntervalTrigger
 app = Flask(__name__)
 db_init.first_init()
 db_init.db_populate()
+# table = feed.soup
+
+# data = []
+# rows = table.find_all('tr')
+# for row in rows:
+#     cols = row.find_all('td')
+#     cols = [ele.text.strip() for ele in cols]
+#     data.append([ele for ele in cols if ele]) # Get rid of empty values
+
 
 #### SCHEDULING BLOCK ####
 scheduler = BackgroundScheduler()
@@ -55,7 +65,7 @@ def query_db(query_string):
 #route, handler
 @app.route("/")
 def main(debug=True):
-    return render_template('index.html')
+    return render_template('index.html', rows=feed.row_data)
 
 #new pageone
 @app.route('/pageone')
