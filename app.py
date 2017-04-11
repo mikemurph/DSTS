@@ -115,6 +115,7 @@ def show(name=None):
 def make_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
+    print(request.form)
 
     # note - only works for 'name' right now, need to make columns variable as well.  
 
@@ -125,7 +126,84 @@ def make_search():
     # why are there repeats..??? should not need to use DISTINCT.
     # VALENCIA, Reynel 
     result = query_db(sqlstring)
+
     return render_template('/final/indiv.html', result=result)
+
+@app.route('/individualsearch', methods=["POST"])
+def make_indiv_search():
+    search_category = request.form['DropDown0']
+    search_term = request.form['SearchBox0']
+    print(request.form)
+
+    # note - only works for 'name' right now, need to make columns variable as well.  
+
+    sqlstring = """
+    SELECT DISTINCT * FROM sdn WHERE sdnType='individual' AND {0} LIKE '%{1}%'
+    """.format(search_category, search_term) 
+
+
+    # why are there repeats..??? should not need to use DISTINCT.
+    # VALENCIA, Reynel 
+    print(sqlstring)
+    result = query_db(sqlstring)
+
+    return render_template('/final/indiv.html', result=result, dropdown=search_category)
+
+@app.route('/organizationsearch', methods=["POST"])
+def make_orgn_search():
+    print(request.form)
+
+    search_category = request.form['DropDown0']
+    search_term = request.form['SearchBox0']
+    print(request.form)
+
+    # note - only works for 'name' right now, need to make columns variable as well.  
+
+    sqlstring = """
+    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0} LIKE '%{1}%'
+    """.format(search_category, search_term) 
+
+    # why are there repeats..??? should not need to use DISTINCT.
+    # VALENCIA, Reynel 
+    print(sqlstring)
+
+    result = query_db(sqlstring)
+
+    return render_template('/final/orgn.html', result=result)
+
+@app.route('/aircraftsearch', methods=["POST"])
+def make_aircr_search():
+    search_category = request.form['DropDown0']
+    search_term = request.form['SearchBox0']
+
+    # note - only works for 'name' right now, need to make columns variable as well.  
+
+    sqlstring = """
+    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0} LIKE '%{1}%'
+    """.format(search_category, search_term) 
+
+    # why are there repeats..??? should not need to use DISTINCT.
+    # VALENCIA, Reynel 
+    result = query_db(sqlstring)
+
+    return render_template('/final/aircr.html', result=result)
+
+@app.route('/vesselsearch', methods=["POST"])
+def make_vessel_search():
+    search_category = request.form['DropDown0']
+    search_term = request.form['SearchBox0']
+
+    # note - only works for 'name' right now, need to make columns variable as well.  
+
+    sqlstring = """
+    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0}  LIKE '%{1}%'
+    """.format(search_category, search_term) 
+
+    # why are there repeats..??? should not need to use DISTINCT.
+    # VALENCIA, Reynel 
+    result = query_db(sqlstring)
+
+    return render_template('/final/vessl.html', result=result)
 
 
 

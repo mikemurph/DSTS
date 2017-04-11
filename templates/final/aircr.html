@@ -171,16 +171,18 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <form action="namesearch" method="POST">
+                                <form action="aircraftsearch" method="POST">
 
                                 <div class="form-inline col-xs-3 no-margin">
 
                                     <label>Search from 
-                                        <select name="example_length" class="form-control input-sm">
-                                                <option value="individual">Name(s)</option>
-                                                <option value="ID Number">ID Number(s)</option>
-                                                <option value="Program Tag">Program Tag</option>
+                                        <select name="DropDown0" class="form-control input-sm">
+                                               
+                                                <option value="name">Name(s)</option>
+                                                <option value="uid">ID Number(s)</option>
+                                                <option value="program">Program Tag</option>
                                                 <option value="Location">Location</option>
+
                                         </select>
                                     </label>
                                 </div>
@@ -190,7 +192,7 @@
                                     <div class="input-group">
                                         <input type="search" class="form-control" placeholder="Search...">
                                         <span class="input-group-btn">
-                                            <a class="btn btn-success no-margin" href="/namesearch"><span class="fa fa-search" aria-hidden="true"></span></a>
+                                            <a class="btn btn-success no-margin" href="/aircraftsearch"><span class="fa fa-search" aria-hidden="true"></span></a>
                                         </span>
                                     </div>
                                 </div>
@@ -206,22 +208,12 @@
                                             <th> ID# </th>
                                             <th> Organization </th>
                                             <th> Program(s) </th>
-                                            <th> List </th>
-                                            <th> Address </th>
+                                           
                                             <th> Remarks </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd">
-                                            <td>Airi Satou</td>
-                                            <td>1234</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>$162,700</td>
-                                            <td>REMARKS</td>
-
-                                        </tr>
+                                        
                                         {% for row in result %}
                                           <tr>
                                              <td>{{row[1]}}</td>
