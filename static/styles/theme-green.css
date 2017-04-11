@@ -1,0 +1,30 @@
+.navigation,
+#login-page {
+  background-image: url('../images/backgrounds/forest.png');
+}
+
+.navigation:after,
+#login-page:after {
+  background-color: #0ec8a2;
+  background: linear-gradient(to bottom, rgba(14,200,162,0.93) 5%, rgba(0, 162, 129, 0.75) 100%);
+}
+
+body.no-bg-img .navigation:after {
+  background-color: #0ec8a2;
+}
+
+.breadcrumb > li.breadcrumb-home > a > i,
+.search-form:hover span.form-control-feedback,
+.search-form span.form-control-feedback:focus {
+  color: #0ec8a2;
+}
+
+.search-form .form-control:hover,
+.search-form .form-control:focus {
+  border: 2px solid #0ec8a2;
+}
+
+.pace .pace-progress {
+  background: #0ec8a2;
+  background: linear-gradient(to right, rgba(14,200,162,0) 5%, rgba(0, 162, 129, 0.75) 100%);
+}

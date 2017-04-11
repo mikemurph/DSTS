@@ -1,0 +1,89 @@
+body.no-bg-img .navigation:after {
+	background: #fff !important;
+}
+
+.navigation:after {
+	background: #fff;
+	border-right: 1px solid #cfdbe2;
+}
+
+.navigation > .nav li a {
+	color: #575a61;
+	font-size: 13.3px;
+	font-weight: 600;
+}
+
+.navigation > .nav .nav-item li a,
+.navigation > .nav .nav-item li:hover a,
+.navigation > .nav li.active .nav-item li:hover a {
+	color: #575a61;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.navigation > .nav .nav-item-icon {
+	color: #d7d9e4;
+}
+
+.navigation > .nav li.active > a,
+.navigation > .nav .nav-item > li.active > a,
+.navigation > .nav li:hover > a,
+.navigation > .nav .nav-item li:hover > a {
+	color: #f95858 !important;
+}
+
+body.left-nav-minimized .navigation .nav li a {
+	transition: 0s;
+}
+
+.navbar-default, .navbar-right,
+.navigation .navbar-brand, .navigation .navbar-brand:focus {
+	background-color: #f95858;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a > i,
+.profile-name {
+	background-color: transparent !important;
+	color: #fff !important;
+}
+
+.nav > li > a > img {
+	border: 2px solid rgba(255,255,255,0.5);
+}
+
+.navbar-brand > i {
+	color: #fff !important;
+}
+
+.time {
+  background-color: rgba(49,69,87,0.85);
+  color: #fff;
+}
+
+.time:hover {
+  background-color: rgba(49,69,87,1);
+}
+
+.breadcrumb > li > a, .breadcrumb > li > a > i {
+  color: #fff !important;
+}
+
+.search-form .form-control {
+	border: 2px solid transparent;
+}
+
+.search-form span.form-control-feedback {
+	color: #fff;
+}
+
+.search-form .form-control:hover,
+.search-form .form-control:focus {
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+
+.search-form:hover span.form-control-feedback,
+.search-form span.form-control-feedback:focus {
+  color: #f95858;
+}

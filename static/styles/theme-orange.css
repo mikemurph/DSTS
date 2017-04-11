@@ -1,0 +1,30 @@
+.navigation,
+#login-page {
+  background-image: url('../images/backgrounds/mountains.png');
+}
+
+.navigation:after,
+#login-page:after {
+  background-color: #ff9e2a;
+  background: linear-gradient(to bottom, rgba(255,158,42,0.83) 5%, rgba(232, 135, 19, 0.75) 100%);
+}
+
+body.no-bg-img .navigation:after {
+  background-color: #ff9e2a;
+}
+
+.breadcrumb > li.breadcrumb-home > a > i,
+.search-form:hover span.form-control-feedback,
+.search-form span.form-control-feedback:focus {
+  color: #ff9e2a;
+}
+
+.search-form .form-control:hover,
+.search-form .form-control:focus {
+  border: 2px solid #ff9e2a;
+}
+
+.pace .pace-progress {
+  background: #ff9e2a;
+  background: linear-gradient(to right, rgba(255,158,42,0) 5%, rgba(232, 135, 19, 0.75) 100%);
+}
