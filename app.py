@@ -125,7 +125,7 @@ def make_search():
     # why are there repeats..??? should not need to use DISTINCT.
     # VALENCIA, Reynel 
     result = query_db(sqlstring)
-    return render_template('page_one.html', result=result)
+    return render_template('/final/indiv.html', result=result)
 
 
 

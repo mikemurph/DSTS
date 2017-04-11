@@ -57,7 +57,7 @@
                 <ul id="search" class="nav nav-item collapse">  
                     <li>
                         <a href="/individual">
-                            <i class="fa fa-male"></i>
+                            <i class="fa fa-user"></i>
                             <span>Individual</span>
                         </a>
                     </li>
@@ -176,7 +176,7 @@
                                 <div class="form-inline col-xs-3 no-margin">
 
                                     <label>Search from 
-                                        <select name="example_length" class="form-control input-sm">
+                                        <select name="DropDown0" class="form-control input-sm">
                                                 <option value="individual">Name(s)</option>
                                                 <option value="ID Number">ID Number(s)</option>
                                                 <option value="Program Tag">Program Tag</option>
@@ -188,10 +188,15 @@
 
                                 <div class="col-xs-9">
                                     <div class="input-group">
-                                        <input type="search" class="form-control" placeholder="Search...">
+                                        <input type="search" name = "SearchBox0" class="form-control" placeholder="Search...">
+                                        <span class="input-group-btn">
+                                            <span class="fa fa-search" aria-hidden="true"></span>
+                                            <input type="submit" href="/namesearch" name="my-form" class="btn btn-success no-margin"/>
+                                        </span>
+                                        <!--             
                                         <span class="input-group-btn">
                                             <a class="btn btn-success no-margin" href="/namesearch" name="my-form" value="Submit!"><span class="fa fa-search" aria-hidden="true"></span></a>
-                                        </span>
+                                        </span> -->
                                     </div>
                                 </div>
                             </div>
@@ -224,10 +229,10 @@
                                         </tr>
                                         {% for row in result %}
                                           <tr>
-                                             <td>{{row[1]}}</td>
                                              <td>{{row[0]}}</td>
-                                             <td>{{row[3]}}</td>   
-                                             <td>{{row[9]}}</td>   
+                                             <td>{{row[1]}}</td>
+                                             <td>{{row[2]}}</td>
+                                             <td>{{row[3]}}</td> 
                                              <td>{{row[11]}}</td>
                                           </tr>
                                        {% endfor %}
