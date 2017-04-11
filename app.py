@@ -133,10 +133,10 @@ def make_search():
 def make_indiv_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
+    location = request.form['DropDown0']
     print(request.form)
 
     # note - only works for 'name' right now, need to make columns variable as well.  
-
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType='individual' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term) 
