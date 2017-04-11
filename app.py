@@ -65,27 +65,27 @@ def page_one():
 #new pagetwo
 @app.route('/pagetwo')
 def page_two():
-    return render_template('page_two.html')
+    return render_template('template/sample.html')
 
 #new individual page
 @app.route('/individual')
 def individual_page():
-    return render_template('individual.html')
+    return render_template('/final/indiv.html')
 
 #new individual page
 @app.route('/organization')
 def organization_page():
-    return render_template('organization.html')
+    return render_template('/final/orgn.html')
 
 #new individual page
 @app.route('/aircraft')
 def aircraft_page():
-    return render_template('aircraft.html')
+    return render_template('/final/aircr.html')
 
 #new individual page
 @app.route('/vessel')
 def vessel_page():
-    return render_template('vessel.html')
+    return render_template('/final/vessl.html')
 
 #execute db script?
 @app.route('/exec')

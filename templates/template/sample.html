@@ -6,20 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="images/favicon.png"/>
+	<link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.png') }}"/>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
     
     <!-- Styling -->
-    <link rel="stylesheet" href="addons/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="addons/toastr/toastr.min.css"/>
-    <link rel="stylesheet" href="addons/fontawesome/css/font-awesome.css"/>
-    <link rel="stylesheet" href="addons/ionicons/css/ionicons.css"/>
-    <link rel="stylesheet" href="addons/noUiSlider/nouislider.min.css"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='addons/bootstrap/css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='addons/toastr/toastr.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='addons/fontawesome/css/font-awesome.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='addons/ionicons/css/ionicons.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='addons/noUiSlider/nouislider.min.css') }}"/>
 
-    <link rel="stylesheet" href="styles/style.css"/>
-    <link rel="stylesheet" href="styles/theme-blue.css" class="theme"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/theme-white-dark.css') }}" class="theme"/>
 
     <!-- End of Styling -->
+
+     
 </head>
 <body class="hold-transition">
 
@@ -27,61 +30,11 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div id="navbar" class="navbar-collapse">
-            	<ul class="breadcrumb">
-        			<li class="breadcrumb-home"><a href=""><i class="fa fa-home"></i></a>
-                    <li class="active"><a href="">Sample</a></li>
-        		</ul>
-                <ul class="nav navbar-nav navbar-right">
-                	<li>
-			            <form class="search-form form-group has-feedback">
-		            		<span class="fa fa-search form-control-feedback"></span>
-		            		<input type="text" class="form-control" name="search" id="search" placeholder="Search...">
-			            </form> 
-                	</li>
-                    <li class="dropdown" id="notifications-toggle">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
-                        	<i class="fa fa-bell"></i>
-                            <span class="label label-danger notification-label">2</span>
-                        </a>
-                        <ul class="list-unstyled notifications dropdown-menu">
-                        	<li>
-                        		<img alt="" class="img-circle small-image vcentered" src="images/profile2.png">
-                        		<span class="notification-title vcentered"> 
-                        			<b> Elon Musk </b> has created an <b> administrator </b> account two times already.
-                        		</span>
-                        		<span class="notification-time text-muted">  15m ago </span>
-                        	</li>
-                        	<li>
-                        		<i class="fa fa-refresh small-icon text-center vcentered"></i>
-                        		<span class="notification-title vcentered"> 
-                        			<b> Device Boo_71 </b> has been restarted.
-                        		</span>
-                        		<span class="notification-time text-muted">  2h ago </span>
-                        	</li>
-                        	<li>
-                        		<i class="fa fa-plus-square small-icon text-center vcentered"></i>
-                        		<span class="notification-title vcentered"> 
-                        			<b> Device Boo_72 </b> has been added.
-                        		</span>
-                        		<span class="notification-time text-muted">  3h ago </span>
-                        	</li>
-                        </ul>
-                    </li>
-                    <li>
-                    	<a href="login.html">
-                        	<i class="fa fa-sign-out"></i>
-                        </a>
-                    </li>
-                    <li class="profile">
-                        <a href="profile.html">
-                            <img alt="" src="images/profile.png" class="img-circle">
-                            <div class="vcentered">
-	                            <p class="profile-name">Dennis Novac</p>
-	                            <p class="profile-position">Web Developer</p>
-                            </div>
-                        </a>
-                    </li>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-home"><a href="/"><i class="fa fa-home"></i></a>
+                    <li class="active"><a href="/pagetwo">Individual Sanctions</a></li>
                 </ul>
+            
             </div>
         </div>
     </nav>
@@ -90,104 +43,43 @@
     <!-- Navigation -->
     <div class="navigation">
         <a class="navbar-brand">
-            <img alt="" class="logo vcentered" src="images/logo.png">
+            <img alt="" class="logo vcentered" src="{{url_for('static', filename='images/logo.png') }}">
             <span class="vcentered">OFRICK</span>
             <i class="fa fa-bars text-primary left-nav-toggle pull-right vcentered"></i>
         </a>
         <ul class="nav primary">
-            <li>
-                <a href="index.html">
-                    <i class="fa fa-tasks"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="messages.html">
-                    <i class="fa fa-envelope"></i>
-                    <span>Messages</span>
-                    <span class="label label-warning left-nav-label"> 24</span>
-                </a>
-            </li>
             <li class="nav-item-expandable">
-                <a href="#elements" data-toggle="collapse" aria-expanded="false"> 
-                    <i class="fa fa-puzzle-piece"></i>
-                    <span> Elements </span>
+                <a href="#search" data-toggle="collapse" aria-expanded="false"> 
+                    <i class="fa fa-search"></i>
+                    <span> Sanctions Search </span>
                     <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
                 </a>
-                <ul id="elements" class="nav nav-item collapse">
+                <ul id="search" class="nav nav-item collapse">  
                     <li>
-                        <a href="typography.html"> 
-                            <i class="fa fa-text-height"></i>
-                            <span> Typography </span>
+                        <a href="/pagetwo">
+                            <i class="fa fa-male"></i>
+                            <span>Individual</span>
                         </a>
                     </li>
                     <li>
-                        <a href="panels.html"> 
-                            <i class="fa fa-square-o"></i>
-                            <span> Panels </span>
+                        <a href="metrics.html">
+                            <i class="fa fa-group"></i>
+                            <span>Group</span>
                         </a>
                     </li>
                     <li>
-                        <a href="draggable.html"> 
-                            <i class="fa fa-reorder"></i>
-                            <span> Draggable </span>
+                        <a href="metrics.html">
+                            <i class="fa fa-plane"></i>
+                            <span>Aircraft</span>
                         </a>
                     </li>
                     <li>
-                        <a href="tabs.html"> 
-                            <i class="fa fa-clone"></i>
-                            <span> Tabs </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="buttons.html"> 
-                            <i class="fa fa-flask"></i>
-                            <span> Buttons </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="icons.html"> 
-                            <i class="fa fa-magic"></i>
-                            <span> Icons </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="notifications.html">
-                            <i class="fa fa-warning"></i>
-                            <span> Notifications </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="progressbars.html"> 
-                            <i class="fa fa-external-link-square"></i>
-                            <span> Progress bars </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="grid.html"> 
-                            <i class="fa fa-th-large"></i>
-                            <span> Bootstrap Grid </span>
+                        <a href="metrics.html">
+                            <i class="fa fa-ship"></i>
+                            <span>Vessel</span>
                         </a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a href="calendar.html">
-                    <i class="fa fa-calendar"></i>
-                    <span>Calendar</span>
-                </a>
-            </li>
-            <li>
-                <a href="tables.html">
-                    <i class="fa fa-plus-square-o"></i>
-                    <span>Tables</span>
-                </a>
-            </li>
-            <li>
-                <a href="forms.html">
-                    <i class="fa fa-scissors"></i>
-                    <span>Forms</span>
-                </a>
             </li>
             <li class="nav-item-expandable">
                 <a href="#charts" data-toggle="collapse" aria-expanded="false"> 
@@ -255,93 +147,6 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item-expandable">
-                <a href="#menu-levels" data-toggle="collapse" aria-expanded="false"> 
-                    <i class="fa fa-sort-amount-asc"></i>
-                    <span> Menu levels </span>
-                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
-                </a>
-                <ul id="menu-levels" class="nav nav-item collapse">
-                    <li class="nav-item-expandable">
-                        <a href="#menu-levels-1" data-toggle="collapse" aria-expanded="false"> 
-                            <i class="fa fa-sort"></i>
-                            <span> Menu expandable</span>
-                            <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
-                        </a>
-                        <ul id="menu-levels-1" class="nav nav-item-secondary collapse">
-                            <li>
-                                <a> 
-                                    <i class="fa fa-star" href="#"></i>
-                                    <span> Sub-menu element</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a> 
-                                    <i class="fa fa-star-o" href="#"></i>
-                                    <span> Sub-menu element 2 </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a> 
-                            <i class="fa fa-search" href="#"></i>
-                            <span> Menu element </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item-expandable">
-                <a href="#pages" data-toggle="collapse" aria-expanded="false"> 
-                    <i class="fa fa-flash"></i>
-                    <span> Pages </span>
-                    <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
-                </a>
-                <ul id="pages" class="nav nav-item collapse">
-                    <li>
-                        <a href="404.html"> 
-                            <i class="fa fa-code"></i>
-                            <span> 404 </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="sample.html"> 
-                            <i class="fa fa-check-circle-o"></i>
-                            <span> Sample page </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="login.html"> 
-                            <i class="fa fa-user-o"></i>
-                            <span> Login </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="register.html"> 
-                            <i class="fa fa-user-plus"></i>
-                            <span> Register </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="profile.html"> 
-                            <i class="fa fa-user"></i>
-                            <span> Profile </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="dragdrop.html"> 
-                            <i class="fa fa-window-restore"></i>
-                            <span> Drag &amp; Drop </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="documents.html"> 
-                            <i class="fa fa-file-o"></i>
-                            <span> Documents </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
         </ul>
 
         <div class="time text-center">
@@ -366,7 +171,10 @@
                         </div>
                         <div class="panel-body">
                             <div class="row">
+                                <form action="namesearch" method="POST">
+
                                 <div class="form-inline col-xs-3 no-margin">
+
                                     <label>Search from 
                                         <select name="example_length" class="form-control input-sm">
                                                 <option value="individual">Name(s)</option>
@@ -382,12 +190,12 @@
                                     <div class="input-group">
                                         <input type="search" class="form-control" placeholder="Search...">
                                         <span class="input-group-btn">
-                                            <a class="btn btn-success no-margin"><span class="fa fa-search" aria-hidden="true"></span></a>
+                                            <a class="btn btn-success no-margin" href="/namesearch"><span class="fa fa-search" aria-hidden="true"></span></a>
                                         </span>
                                     </div>
                                 </div>
                             </div>
-
+                            </form>
                             <div class="v-spacing-xs"></div>
 
                             <div class="table-responsive">
@@ -400,17 +208,29 @@
                                             <th> Program(s) </th>
                                             <th> List </th>
                                             <th> Address </th>
+                                            <th> Remarks </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="odd">
                                             <td>Airi Satou</td>
-                                            <td>Accountant</td>
+                                            <td>1234</td>
                                             <td>Tokyo</td>
                                             <td>33</td>
                                             <td>2008/11/28</td>
                                             <td>$162,700</td>
+                                            <td>REMARKS</td>
+
                                         </tr>
+                                        {% for row in result %}
+                                          <tr>
+                                             <td>{{row[1]}}</td>
+                                             <td>{{row[0]}}</td>
+                                             <td>{{row[3]}}</td>   
+                                             <td>{{row[9]}}</td>   
+                                             <td>{{row[11]}}</td>
+                                          </tr>
+                                       {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -424,6 +244,7 @@
                                 <li><a href="#">Next</a></li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -432,7 +253,6 @@
 
         <!-- Footer -->
         <div class="footer">
-            <p> <b> All rights reserved </b> &copy;Dauphin Premium 2017 </p>
         </div>
         <!-- End of Footer -->
     </div>
@@ -440,15 +260,25 @@
 
     <div class="scripts">
 
+   <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
         <!-- Addons -->
-        <script src="addons/jquery/jquery.min.js"></script>
-        <script src="addons/jquery-ui/jquery-ui.min.js"></script>
-        <script src="addons/bootstrap/js/bootstrap.min.js"></script>
-        <script src="addons/fullcalendar/lib/moment.min.js"></script>
-        <script src="addons/pacejs/pace.min.js"></script>
+        <script src="{{url_for('static', filename='addons/jquery-ui/jquery-ui.min.js') }}
+"></script>
+        <script src="{{url_for('static', filename='addons/jquery/jquery.min.js') }}
+"></script>
+        <script src="{{url_for('static', filename='addons/bootstrap/js/bootstrap.min.js') }}
+"></script>
+        <script src="{{url_for('static', filename='addons/fullcalendar/lib/moment.min.js') }}
+"></script>
+        <script src="{{url_for('static', filename='addons/pacejs/pace.min.js') }}"></script>
 
         <!-- Dauphin scripts -->
-        <script src="addons/dauphin.js"></script>
+        <script src="{{url_for('static', filename='addons/dauphin.js') }}"></script>
+
 
         <!-- Current page scripts -->
         <div class="current-scripts">
