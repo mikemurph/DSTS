@@ -34,10 +34,10 @@
     </style>
 
 
-
 </head>
 
 <body>
+
 
     <div class="container">
         <div class="header">
@@ -96,6 +96,20 @@
               <form action="/burundi" method=get>
                 <input type=submit></input>
                 </form>
+
+                <br>
+                HELLO THIS IS THE FEED
+
+
+    <table>
+    {% for row in rows %}
+    <TR>
+        <TD> {{ row }}</TD>
+        <!-- <TD> {{row.find_all('td')}}</TD> -->
+        <!-- <TD>hi</TD> -->
+    </TR>
+    {% endfor %}
+    </table>
 
             </div>
         </div>
