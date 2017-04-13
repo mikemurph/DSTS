@@ -179,7 +179,7 @@ def make_aircr_search():
     # note - only works for 'name' right now, need to make columns variable as well.  
 
     sqlstring = """
-    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0} LIKE '%{1}%'
+    SELECT DISTINCT * FROM sdn WHERE sdnType=='aircraft' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term) 
 
     # why are there repeats..??? should not need to use DISTINCT.
@@ -196,7 +196,7 @@ def make_vessel_search():
     # note - only works for 'name' right now, need to make columns variable as well.  
 
     sqlstring = """
-    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0}  LIKE '%{1}%'
+    SELECT DISTINCT * FROM sdn WHERE sdnType=='vessel' AND {0}  LIKE '%{1}%'
     """.format(search_category, search_term) 
 
     # why are there repeats..??? should not need to use DISTINCT.
