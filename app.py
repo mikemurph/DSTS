@@ -18,6 +18,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 app = Flask(__name__)
 db_init.first_init()
 db_init.db_populate()
+db_init.db_pop_almanacs()
 
 
 #### SCHEDULING BLOCK ####

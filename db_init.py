@@ -18,6 +18,28 @@ def first_init():
    
     conn.close()
 
+    ######
+    conn = sql.connect("orgs_db.db")
+    cursor = conn.cursor()
+    try:
+        cursor.execute("""CREATE TABLE orgs_db 
+                            (org_name text, num_desig_tot text, num_desig_ind text, num_desig_ent text, num_un_tot text, num_un_ind text, num_un_ent text)
+                        """)
+    except:
+        pass
+    conn.close()
+
+    ######
+    conn = sql.connect("natn_db.db")
+    cursor = conn.cursor()
+    try:
+        cursor.execute("""CREATE TABLE natn_db 
+                            (nationality text, num_nation text)
+                        """)
+    except:
+        pass
+    conn.close()
+
 
 
 # THIS ONE TAUGHT YOU EVERYTHING: 
@@ -37,6 +59,9 @@ def db_populate():
     try:
         with open('sdn_source.csv', 'r') as file:
           reader = csv.DictReader(file)
+
+          # print([i for i in reader])
+
           to_db = [(i['uid'], i['name'], i['sdnType'], i['program'], i['title'], i['callSign'], i['vesselType'], i['tonnage'], i['grossTonnage'], i['vesselFlag'], i['vesselOwner'], i['remarks']) for i in reader]
     except:
         db_update()
@@ -73,6 +98,59 @@ def db_update():
 
 
     db_populate()
+
+
+
+def db_pop_almanacs():
+    conn = sql.connect("orgs_db.db")
+    cursor = conn.cursor()
+    # delete_string = """DELETE FROM orgs_db"""
+    # cursor.execute(delete_string)
+
+    with open('almanac_orgs_static.csv', 'r') as file:
+        reader = csv.DictReader(file)
+        # print([i for i in reader])
+        to_db = [(i['Organization'], 
+            i['Number of OFAC Designations'], 
+            i['Number of Individual OFAC Designations'], 
+            i['Number of OFAC Entity Designations'], 
+            i['Number of UN Designations'], 
+            i['Number of Individual UN Designations'], 
+            i['Number of Entity UN Designations']) 
+            for i in reader]
+
+
+    cursor.executemany("INSERT INTO orgs_db VALUES (?,?,?,?,?,?,?)", to_db)
+    conn.commit()
+
+    query_string = "SELECT * FROM orgs_db"
+    cursor.execute(query_string)
+
+    print(cursor.fetchall())
+    conn.close()
+
+    ###### 
+
+    conn = sql.connect("natn_db.db")
+    cursor = conn.cursor()
+    # delete_string = """DELETE FROM orgs_db"""
+    # cursor.execute(delete_string)
+
+    with open('almanac_natn_static.csv', 'r') as file:
+        reader = csv.DictReader(file)
+        to_db = [(i['Nationality'], 
+            i['Total OFAC Designations, by Nationality']) 
+            for i in reader]
+
+
+    cursor.executemany("INSERT INTO natn_db VALUES (?,?)", to_db)
+    conn.commit()
+
+    query_string = "SELECT * FROM natn_db WHERE nationality='Afghanistan'"
+    cursor.execute(query_string)
+
+    print(cursor.fetchall())
+    conn.close()
 
 
 
