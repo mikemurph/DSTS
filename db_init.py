@@ -104,8 +104,8 @@ def db_update():
 def db_pop_almanacs():
     conn = sql.connect("orgs_db.db")
     cursor = conn.cursor()
-    # delete_string = """DELETE FROM orgs_db"""
-    # cursor.execute(delete_string)
+    delete_string = """DELETE FROM orgs_db"""
+    cursor.execute(delete_string)
 
     with open('almanac_orgs_static.csv', 'r') as file:
         reader = csv.DictReader(file)
@@ -123,18 +123,17 @@ def db_pop_almanacs():
     cursor.executemany("INSERT INTO orgs_db VALUES (?,?,?,?,?,?,?)", to_db)
     conn.commit()
 
-    query_string = "SELECT * FROM orgs_db"
-    cursor.execute(query_string)
-
-    print(cursor.fetchall())
+    # query_string = "SELECT * FROM orgs_db"
+    # cursor.execute(query_string)
+    # print(cursor.fetchall())
     conn.close()
 
     ###### 
 
     conn = sql.connect("natn_db.db")
     cursor = conn.cursor()
-    # delete_string = """DELETE FROM orgs_db"""
-    # cursor.execute(delete_string)
+    delete_string = """DELETE FROM natn_db"""
+    cursor.execute(delete_string)
 
     with open('almanac_natn_static.csv', 'r') as file:
         reader = csv.DictReader(file)
@@ -146,10 +145,9 @@ def db_pop_almanacs():
     cursor.executemany("INSERT INTO natn_db VALUES (?,?)", to_db)
     conn.commit()
 
-    query_string = "SELECT * FROM natn_db WHERE nationality='Afghanistan'"
-    cursor.execute(query_string)
-
-    print(cursor.fetchall())
+    # query_string = "SELECT * FROM natn_db WHERE nationality='Afghanistan'"
+    # cursor.execute(query_string)
+    # # print(cursor.fetchall())
     conn.close()
 
 
