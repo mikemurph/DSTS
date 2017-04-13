@@ -142,7 +142,7 @@ def make_aircr_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
     sqlstring = """
-    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0} LIKE '%{1}%'
+    SELECT DISTINCT * FROM sdn WHERE sdnType=='aircraft' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term) 
     result = query_db(sqlstring)
 
@@ -153,7 +153,7 @@ def make_vessel_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
     sqlstring = """
-    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0}  LIKE '%{1}%'
+    SELECT DISTINCT * FROM sdn WHERE sdnType=='vessel' AND {0}  LIKE '%{1}%'
     """.format(search_category, search_term) 
     result = query_db(sqlstring)
 
