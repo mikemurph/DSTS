@@ -18,14 +18,6 @@ from apscheduler.triggers.interval import IntervalTrigger
 app = Flask(__name__)
 db_init.first_init()
 db_init.db_populate()
-# table = feed.soup
-
-# data = []
-# rows = table.find_all('tr')
-# for row in rows:
-#     cols = row.find_all('td')
-#     cols = [ele.text.strip() for ele in cols]
-#     data.append([ele for ele in cols if ele]) # Get rid of empty values
 
 
 #### SCHEDULING BLOCK ####
@@ -115,16 +107,9 @@ def show(name=None):
 def make_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
-    print(request.form)
-
-    # note - only works for 'name' right now, need to make columns variable as well.  
-
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType='{0}' AND name LIKE '%{1}%'
     """.format(search_category, search_term) 
-
-    # why are there repeats..??? should not need to use DISTINCT.
-    # VALENCIA, Reynel 
     result = query_db(sqlstring)
 
     return render_template('/final/indiv.html', result=result)
@@ -134,39 +119,20 @@ def make_indiv_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
     location = request.form['DropDown0']
-    print(request.form)
-
-    # note - only works for 'name' right now, need to make columns variable as well.  
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType='individual' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term) 
-
-
-    # why are there repeats..??? should not need to use DISTINCT.
-    # VALENCIA, Reynel 
-    print(sqlstring)
     result = query_db(sqlstring)
 
     return render_template('/final/indiv.html', result=result, dropdown=search_category)
 
 @app.route('/organizationsearch', methods=["POST"])
 def make_orgn_search():
-    print(request.form)
-
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
-    print(request.form)
-
-    # note - only works for 'name' right now, need to make columns variable as well.  
-
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term) 
-
-    # why are there repeats..??? should not need to use DISTINCT.
-    # VALENCIA, Reynel 
-    print(sqlstring)
-
     result = query_db(sqlstring)
 
     return render_template('/final/orgn.html', result=result)
@@ -175,15 +141,9 @@ def make_orgn_search():
 def make_aircr_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
-
-    # note - only works for 'name' right now, need to make columns variable as well.  
-
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term) 
-
-    # why are there repeats..??? should not need to use DISTINCT.
-    # VALENCIA, Reynel 
     result = query_db(sqlstring)
 
     return render_template('/final/aircr.html', result=result)
@@ -192,19 +152,16 @@ def make_aircr_search():
 def make_vessel_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
-
-    # note - only works for 'name' right now, need to make columns variable as well.  
-
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0}  LIKE '%{1}%'
     """.format(search_category, search_term) 
-
-    # why are there repeats..??? should not need to use DISTINCT.
-    # VALENCIA, Reynel 
     result = query_db(sqlstring)
 
     return render_template('/final/vessl.html', result=result)
 
+@app.route('/groups', methods=['POST'])
+# also Vessel search by flag; show countries with total count. 
+# 
 
 
 
