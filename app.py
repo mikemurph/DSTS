@@ -57,7 +57,7 @@ def query_db(query_string):
 #route, handler
 @app.route("/")
 def main(debug=True):
-    return render_template('index.html', rows=feed.row_data)
+    return render_template('/final/index.html', rows=feed.row_data)
 
 #new pageone
 @app.route('/pageone')
@@ -159,7 +159,6 @@ def make_vessel_search():
 
     return render_template('/final/vessl.html', result=result)
 
-@app.route('/groups', methods=['POST'])
 # also Vessel search by flag; show countries with total count. 
 # 
 
