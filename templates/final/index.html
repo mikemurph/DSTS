@@ -69,6 +69,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/entity">
+                            <i class="fa fa-building"></i>
+                            <span>Entity</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/aircraft">
                             <i class="fa fa-plane"></i>
                             <span>Aircraft</span>
@@ -166,6 +172,7 @@
         <h3> &nbsp&nbsp&nbspSearch designations for... </h3>
             <div class="container-fluid">
                 <div class="row">
+
                     <div class="col-md-3 col-sm-6 col-xs-12" >
                         <div class="metric">
                             <div class="metric-left">
@@ -196,8 +203,8 @@
                             </div>
                             
                             <div class="metric-right">
-                                <a href="/organization">
-                                        <i class="fa fa-group"></i>
+                                <a href="/entity">
+                                        <i class="fa fa-building"></i>
                                     </a> 
                             </div>                           
                             </div>
@@ -237,6 +244,35 @@
                                     </a> 
                             </div>                           
                             </div>
+                    </div>
+                </div>
+        <h3> &nbsp&nbsp&nbspSearch for identified terrorist organizations... </h3>
+        <div class="col-sm-12">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="row">
+                                <form action="/organizationsearch" method="POST">
+                                <div class="form-inline col-xs-3 no-margin">
+                                    <h4>Search terrorist organizations</h4>
+                                </div>
+                                <div class="col-xs-9">
+                                    <div class="input-group">
+                                        <input type="search" name = "SearchBox0" class="form-control" placeholder="Search...">
+                                        <span class="input-group-btn">
+                                            <span class="fa fa-search" aria-hidden="true"></span>
+                                            <input type="submit" name="form-type"  class="btn btn-success no-margin"/>
+                                        </span>
+                                        <!--             
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-success no-margin" href="/namesearch" name="my-form" value="Submit!"><span class="fa fa-search" aria-hidden="true"></span></a>
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                            
+                        </div>
+
                     </div>
                 </div>
         <div class="row">

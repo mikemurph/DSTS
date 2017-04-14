@@ -44,7 +44,7 @@
     <div class="navigation">
         <a class="navbar-brand">
             <img alt="" class="logo vcentered" src="{{url_for('static', filename='images/logo.png') }}">
-            <span class="vcentered">OFRICK</span>
+            <span class="vcentered">OFACasaurus</span>
             <i class="fa fa-bars text-primary left-nav-toggle pull-right vcentered"></i>
         </a>
         <ul class="nav primary">
@@ -65,6 +65,12 @@
                         <a href="/organization">
                             <i class="fa fa-group"></i>
                             <span>Organization</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/entity">
+                            <i class="fa fa-building"></i>
+                            <span>Entity</span>
                         </a>
                     </li>
                     <li>
@@ -192,7 +198,8 @@
                                     <div class="input-group">
                                         <input type="search" name = "SearchBox0" class="form-control" placeholder="Search...">
                                         <span class="input-group-btn">
-                                            <a class="btn btn-success no-margin" href="/aircraftsearch"><span class="fa fa-search" aria-hidden="true"></span></a>
+                                            <span class="fa fa-search" aria-hidden="true"></span>
+                                            <input type="submit" name="form-type"  class="btn btn-success no-margin"/>
                                         </span>
                                     </div>
                                 </div>

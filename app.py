@@ -80,6 +80,11 @@ def individual_page():
 def organization_page():
     return render_template('/final/orgn.html')
 
+    #new individual page
+@app.route('/entity')
+def entity_page():
+    return render_template('/final/entity.html')
+
 #new individual page
 @app.route('/aircraft')
 def aircraft_page():
@@ -127,13 +132,23 @@ def make_indiv_search():
 
     return render_template('/final/indiv.html', result=result, dropdown=search_category)
 
-@app.route('/organizationsearch', methods=["POST"])
-def make_orgn_search():
+@app.route('/entitysearch', methods=["POST"])
+def make_entity_search():
     search_category = request.form['DropDown0']
     search_term = request.form['SearchBox0']
     sqlstring = """
-    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND {0} LIKE '%{1}%'
+    SELECT DISTINCT * FROM sdn WHERE sdnType='entity' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term) 
+    result = query_db(sqlstring)
+
+    return render_template('/final/entity.html', result=result)
+
+@app.route('/organizationsearch', methods=["POST"])
+def make_orgn_search():
+    search_term = request.form['SearchBox0']
+    sqlstring = """
+    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND name LIKE '%{0}%'
+    """.format(search_term) 
     result = query_db(sqlstring)
 
     return render_template('/final/orgn.html', result=result)
