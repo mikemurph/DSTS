@@ -65,6 +65,11 @@ def main(debug=True):
 def page_one():
     return render_template('page_one.html')
 
+#newsfeed
+@app.route('/newsfeed')
+def newsfeed():
+    return render_template('/final/newsfeed.html')
+
 #new pagetwo
 @app.route('/pagetwo')
 def page_two():
@@ -115,7 +120,7 @@ def make_search():
     search_term = request.form['SearchBox0']
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType='{0}' AND name LIKE '%{1}%'
-    """.format(search_category, search_term) 
+    """.format(search_category, search_term)
     result = query_db(sqlstring)
 
     return render_template('/final/indiv.html', result=result)
@@ -127,7 +132,7 @@ def make_indiv_search():
     location = request.form['DropDown0']
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType='individual' AND {0} LIKE '%{1}%'
-    """.format(search_category, search_term) 
+    """.format(search_category, search_term)
     result = query_db(sqlstring)
 
     return render_template('/final/indiv.html', result=result, dropdown=search_category)
@@ -138,7 +143,7 @@ def make_entity_search():
     search_term = request.form['SearchBox0']
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND sdnType!='aircraft' AND sdnType!='entity' AND {0} LIKE '%{1}%'
-    """.format(search_category, search_term) 
+    """.format(search_category, search_term)
     result = query_db(sqlstring)
 
     return render_template('/final/entity.html', result=result)
@@ -148,7 +153,7 @@ def make_orgn_search():
     search_term = request.form['SearchBox0']
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND name LIKE '%{0}%'
-    """.format(search_term) 
+    """.format(search_term)
     result = query_db(sqlstring)
 
     return render_template('/final/orgn.html', result=result)
@@ -159,7 +164,7 @@ def make_aircr_search():
     search_term = request.form['SearchBox0']
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType=='aircraft' AND {0} LIKE '%{1}%'
-    """.format(search_category, search_term) 
+    """.format(search_category, search_term)
     result = query_db(sqlstring)
 
     return render_template('/final/aircr.html', result=result)
@@ -170,13 +175,13 @@ def make_vessel_search():
     search_term = request.form['SearchBox0']
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType=='vessel' AND {0}  LIKE '%{1}%'
-    """.format(search_category, search_term) 
+    """.format(search_category, search_term)
     result = query_db(sqlstring)
 
     return render_template('/final/vessl.html', result=result)
 
-# also Vessel search by flag; show countries with total count. 
-# 
+# also Vessel search by flag; show countries with total count.
+#
 
 
 
