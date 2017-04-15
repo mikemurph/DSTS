@@ -1,7 +1,7 @@
 #!/usr/bin/env/python3
 
 #imports
-from flask import Flask, render_template, request, json, g
+from flask import Flask, render_template, request, json, g, redirect
 
 import sqlite3 as sql
 import db_init
@@ -53,6 +53,17 @@ def query_db(db_filename, query_string):
     result = cursor.fetchall()
     conn.close()
     return result
+
+def query_db_indiv(the_name):
+    sqlstring = """
+    SELECT DISTINCT * FROM sdn WHERE sdnType='individual' AND name LIKE '%{0}%'
+    """.format(the_name)
+    result = query_db("sdn.db", sqlstring)
+
+    # return redirect('/final/indiv.html')
+    return render_template('/final/indiv.html', result=result)
+
+app.jinja_env.globals.update(query_db_indiv=query_db_indiv)
 
 
 #old

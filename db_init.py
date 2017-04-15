@@ -104,6 +104,8 @@ def db_update():
 def db_pop_almanacs():
     conn = sql.connect("orgs_db.db")
     cursor = conn.cursor()
+    # lines below causing errors, db locked. 
+    # fix: http://stackoverflow.com/questions/151026/how-do-i-unlock-a-sqlite-database
     delete_string = """DELETE FROM orgs_db"""
     cursor.execute(delete_string)
 
@@ -132,6 +134,7 @@ def db_pop_almanacs():
 
     conn = sql.connect("natn_db.db")
     cursor = conn.cursor()
+    # lines below causing errors, db locked. 
     delete_string = """DELETE FROM natn_db"""
     cursor.execute(delete_string)
 

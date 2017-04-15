@@ -175,6 +175,7 @@
                         <div class="panel-heading">
                             Organization sanction search
                         </div>
+
                         <div class="panel-body">
                             <div class="row">
                                 <form action="/organizationsearch" method="POST">
@@ -225,11 +226,14 @@
 
                                         {% for row in result %}
                                           <tr>
-                                             <td><a href="hi.com">
-                                             {{row[0]}}</a></td>
+                                        <!--      <td><a href='hi.com'>
+                                             {{ row[0] }} 
+                                             </a></td> -->
+                                            <td><a href="{{ query_db_indiv('john') }}">
+                                             {{ row[0] }} 
+                                             </a></td>
 
-                                             <td><a href="bye.com">
-                                             {{row[1]}}</a></td>
+                                             <td>{{row[1]}}</td>
                                              <td>{{row[2]}}</td>
                                              <td>{{row[3]}}</td>
                                              <td>{{row[4]}}</td>
