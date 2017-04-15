@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dauphin - Premium Responsive Bootstrap Admin Template - Sample</title>
+    <title>OFACasaurus</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.png') }}"/>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
-    
+
     <!-- Styling -->
     <link rel="stylesheet" href="{{url_for('static', filename='addons/bootstrap/css/bootstrap.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='addons/toastr/toastr.min.css') }}" />
@@ -22,7 +22,7 @@
 
     <!-- End of Styling -->
 
-     
+
 </head>
 <body class="hold-transition">
 
@@ -35,7 +35,7 @@
                     <li class="active"><a href="/individual">Individual Sanctions</a></li>
 
                 </ul>
-            
+
             </div>
         </div>
     </nav>
@@ -50,12 +50,12 @@
         </a>
         <ul class="nav primary">
             <li class="nav-item-expandable">
-                <a href="#search" data-toggle="collapse" aria-expanded="false"> 
+                <a href="#search" data-toggle="collapse" aria-expanded="false">
                     <i class="fa fa-search"></i>
                     <span> Sanctions Search </span>
                     <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
                 </a>
-                <ul id="search" class="nav nav-item collapse">  
+                <ul id="search" class="nav nav-item collapse">
                     <li>
                         <a href="/individual">
                             <i class="fa fa-user"></i>
@@ -89,38 +89,38 @@
                 </ul>
             </li>
             <li class="nav-item-expandable">
-                <a href="#charts" data-toggle="collapse" aria-expanded="false"> 
+                <a href="#charts" data-toggle="collapse" aria-expanded="false">
                     <i class="fa fa-area-chart"></i>
                     <span> Charts </span>
                     <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
                 </a>
                 <ul id="charts" class="nav nav-item collapse">
                     <li>
-                        <a href="chartjs.html"> 
+                        <a href="chartjs.html">
                             <i class="fa fa-bar-chart"></i>
                             <span> Chart.js </span>
                         </a>
                     </li>
                     <li>
-                        <a href="morrisjs.html"> 
+                        <a href="morrisjs.html">
                             <i class="fa fa-line-chart"></i>
                             <span> Morris.js Charts </span>
                         </a>
                     </li>
                     <li>
-                        <a href="flot.html"> 
+                        <a href="flot.html">
                             <i class="fa fa-pie-chart"></i>
                             <span> Flot Charts </span>
                         </a>
                     </li>
                     <li>
-                        <a href="rickshaw.html"> 
+                        <a href="rickshaw.html">
                             <i class="fa fa-signal"></i>
                             <span> Rickshaw Charts </span>
                         </a>
                     </li>
                     <li>
-                        <a href="sparkline.html"> 
+                        <a href="sparkline.html">
                             <i class="ion ion-arrow-graph-up-right"></i>
                             <span> Sparkline Charts </span>
                         </a>
@@ -134,20 +134,20 @@
                 </a>
             </li>
             <li class="nav-item-expandable">
-                <a href="#maps" data-toggle="collapse" aria-expanded="false"> 
+                <a href="#maps" data-toggle="collapse" aria-expanded="false">
                     <i class="fa fa-map-o"></i>
                     <span> Maps </span>
                     <span class="nav-item-icon"> <i class="fa fa-chevron-down"></i> </span>
                 </a>
                 <ul id="maps" class="nav nav-item collapse">
                     <li>
-                        <a href="googlemaps.html"> 
+                        <a href="googlemaps.html">
                             <i class="fa fa-google"></i>
                             <span> Google Maps </span>
                         </a>
                     </li>
                     <li>
-                        <a href="mapael.html"> 
+                        <a href="mapael.html">
                             <i class="fa fa-map-pin"></i>
                             <span> Mapael </span>
                         </a>
@@ -182,7 +182,7 @@
 
                                 <div class="form-inline col-xs-3 no-margin">
 
-                                    <label>Search from 
+                                    <label>Search from
                                         <select name="DropDown0" class="form-control input-sm">
 
                                                 <option value="name">Name(s)</option>
@@ -204,7 +204,7 @@
                                             <span class="fa fa-search" aria-hidden="true"></span>
                                             <input type="submit" name="form-type"  class="btn btn-success no-margin"/>
                                         </span>
-                                        <!--             
+                                        <!--
                                         <span class="input-group-btn">
                                             <a class="btn btn-success no-margin" href="/namesearch" name="my-form" value="Submit!"><span class="fa fa-search" aria-hidden="true"></span></a>
                                         </span> -->
@@ -233,7 +233,7 @@
                                              <td>{{row[1]}}</td>
                                              <td>{{row[0]}}</td>
                                              <td>{{row[2]}}</td>
-                                             <td>{{row[3]}}</td> 
+                                             <td>{{row[3]}}</td>
                                              <td>{{row[11]}}</td>
                                           </tr>
                                        {% endfor %}
