@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.png') }}"/>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.png') }}"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
 
     <!-- Styling -->
     <link rel="stylesheet" href="{{url_for('static', filename='addons/bootstrap/css/bootstrap.css') }}"/>
@@ -169,84 +169,151 @@
 
     <!-- Main content-->
     <div class="content">
-        <h3> &nbsp&nbsp&nbspSearch designations for... </h3>
             <div class="container-fluid">
-                <div class="row">
+                <div class="col-sm-8">
+                    <div class="panel">
+                        <div class="panel-heading">
+                           <h3> &nbsp&nbsp&nbspSearch designations for... </h3>
+                           </div>
+                           <div class = "panel-body"> 
 
-                    <div class="col-md-3 col-sm-6 col-xs-12" >
-                        <div class="metric">
-                            <div class="metric-left">
-                                <div class="metric-panel text-left">
-                                    <div class="metric-text" >
-                                        <h4> &nbsp </h4>
-                                        <h3> Individuals </h3>
+                        <div class="row">
+                            <div class="col-md-6" >
+                                <div class="metric">
+                                    <div class="metric-left">
+                                        <div class="metric-panel text-left">
+                                            <div class="metric-text" >
+                                                <h4> &nbsp </h4>
+                                                <h3> Individuals </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="metric-right">
+                                        <a href="/individual">
+                                                <i class="fa fa-user"></i>
+                                            </a>
+                                    </div>
+                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="metric">
+                                    <div class="metric-left">
+                                        <div class="metric-panel text-left">
+                                            <div class="metric-text">
+                                                <h4> &nbsp </h4>
+                                                <h3> Entities </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="metric-right">
+                                        <a href="/entity">
+                                                <i class="fa fa-building"></i>
+                                            </a>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="metric">
+                                <div class="metric-left">
+                                    <div class="metric-panel text-left">
+                                        <div class="metric-text">
+                                            <h4> &nbsp </h4>
+                                            <h3> Aircraft </h3>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="metric-right">
-                                <a href="/individual">
-                                        <i class="fa fa-user"></i>
-                                    </a>
-                            </div>
-                            </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="metric">
-                            <div class="metric-left">
-                                <div class="metric-panel text-left">
-                                    <div class="metric-text">
-                                        <h4> &nbsp </h4>
-                                        <h3> Entities </h3>
+                                <div class="metric-right">
+                                    <a href="/aircraft">
+                                            <i class="fa fa-plane"></i>
+                                        </a>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="metric">
+                                <div class="metric-left">
+                                    <div class="metric-panel text-left">
+                                        <div class="metric-text">
+                                            <h4> &nbsp </h4>
+                                            <h3> Vessels </h3>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="metric-right">
-                                <a href="/entity">
-                                        <i class="fa fa-building"></i>
-                                    </a>
-                            </div>
-                            </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="metric">
-                            <div class="metric-left">
-                                <div class="metric-panel text-left">
-                                    <div class="metric-text">
-                                        <h4> &nbsp </h4>
-                                        <h3> Aircraft </h3>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="metric-right">
-                                <a href="/aircraft">
-                                        <i class="fa fa-plane"></i>
-                                    </a>
-                            </div>
-                            </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="metric">
-                            <div class="metric-left">
-                                <div class="metric-panel text-left">
-                                    <div class="metric-text">
-                                        <h4> &nbsp </h4>
-                                        <h3> Vessels </h3>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="metric-right">
-                                <a href="/vessel">
+                                <div class="metric-right">
+                                    <a href="/vessel">
                                         <i class="fa fa-ship"></i>
                                     </a>
+                                </div>
                             </div>
-                            </div>
+                        </div>
                     </div>
+                                        </div>
+
+                                           </div>
+
                 </div>
-        <h3> &nbsp&nbsp&nbspSearch for identified terrorist organizations... </h3>
+                <div class="col-sm-4">
+                        <div class="panel">
+                                <!-- start sw-rss-feed code --> 
+                             <div class="panel-heading">
+                                SDN Press Release Feed
+                            </div>       
+                            <div class="panel-body">
+                            <script type="text/javascript"> 
+                            <!-- 
+                            rssfeed_url = new Array(); 
+                            rssfeed_url[0]="http://www.treasury.gov/resource-center/sanctions/OFAC-Enforcement/Documents/ofac.xml";  
+                            rssfeed_frame_width="290"; 
+                            rssfeed_frame_height="280"; 
+                            rssfeed_scroll="off"; 
+                            rssfeed_scroll_step="8"; 
+                            rssfeed_scroll_bar="on"; 
+                            rssfeed_target="_blank"; 
+                            rssfeed_font_size="12"; 
+                            rssfeed_font_face=""; 
+                            rssfeed_border="on"; 
+                            rssfeed_css_url="http://feed.surfing-waves.com/css/style4.css"; 
+                            rssfeed_title="on"; 
+                            rssfeed_title_name="OFAC Updates"; 
+                            rssfeed_title_bgcolor="#3366ff"; 
+                            rssfeed_title_color="#fff"; 
+                            rssfeed_title_bgimage="http://"; 
+                            rssfeed_footer="off"; 
+                            rssfeed_footer_name="rss feed"; 
+                            rssfeed_footer_bgcolor="#fff"; 
+                            rssfeed_footer_color="#333"; 
+                            rssfeed_footer_bgimage="http://"; 
+                            rssfeed_item_title_length="50"; 
+                            rssfeed_item_title_color="#666"; 
+                            rssfeed_item_bgcolor="#fff"; 
+                            rssfeed_item_bgimage="http://"; 
+                            rssfeed_item_border_bottom="on"; 
+                            rssfeed_item_source_icon="off"; 
+                            rssfeed_item_date="off"; 
+                            rssfeed_item_description="on"; 
+                            rssfeed_item_description_length="120"; 
+                            rssfeed_item_description_color="#666"; 
+                            rssfeed_item_description_link_color="#333"; 
+                            rssfeed_item_description_tag="off"; 
+                            rssfeed_no_items="0"; 
+                            rssfeed_cache = "f4ec9dc9f4909a1cd427f3b351f1b51b"; 
+                            //--> 
+                            </script> 
+                            <script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script> 
+                            <!-- end sw-rss-feed code -->
+                        </div>
+                    </div>
+
+                </div>
+                
+
+                    
         <div class="col-sm-12">
                     <div class="panel">
                         <div class="panel-body">
@@ -257,7 +324,7 @@
                                 </div>
                                 <div class="col-xs-9">
                                     <div class="input-group">
-                                        <input type="search" name = "SearchBox0" class="form-control" placeholder="Search...">
+                                        <input type="search" name = "SearchBox0" class="form-control" placeholder="e.g. Abdallah Azzam Brigades (AAB)">
                                         <span class="input-group-btn">
                                             <span class="fa fa-search" aria-hidden="true"></span>
                                             <input type="submit" name="form-type"  class="btn btn-success no-margin"/>
@@ -304,53 +371,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+            
 
-        <div class="panel">
-                    <!-- start sw-rss-feed code --> 
-            <script type="text/javascript"> 
-            <!-- 
-            rssfeed_url = new Array(); 
-            rssfeed_url[0]="http://www.treasury.gov/resource-center/sanctions/OFAC-Enforcement/Documents/ofac.xml";  
-            rssfeed_frame_width="265"; 
-            rssfeed_frame_height="380"; 
-            rssfeed_scroll="off"; 
-            rssfeed_scroll_step="8"; 
-            rssfeed_scroll_bar="on"; 
-            rssfeed_target="_blank"; 
-            rssfeed_font_size="12"; 
-            rssfeed_font_face=""; 
-            rssfeed_border="on"; 
-            rssfeed_css_url="http://feed.surfing-waves.com/css/style4.css"; 
-            rssfeed_title="on"; 
-            rssfeed_title_name="OFAC Updates"; 
-            rssfeed_title_bgcolor="#3366ff"; 
-            rssfeed_title_color="#fff"; 
-            rssfeed_title_bgimage="http://"; 
-            rssfeed_footer="off"; 
-            rssfeed_footer_name="rss feed"; 
-            rssfeed_footer_bgcolor="#fff"; 
-            rssfeed_footer_color="#333"; 
-            rssfeed_footer_bgimage="http://"; 
-            rssfeed_item_title_length="50"; 
-            rssfeed_item_title_color="#666"; 
-            rssfeed_item_bgcolor="#fff"; 
-            rssfeed_item_bgimage="http://"; 
-            rssfeed_item_border_bottom="on"; 
-            rssfeed_item_source_icon="off"; 
-            rssfeed_item_date="off"; 
-            rssfeed_item_description="on"; 
-            rssfeed_item_description_length="120"; 
-            rssfeed_item_description_color="#666"; 
-            rssfeed_item_description_link_color="#333"; 
-            rssfeed_item_description_tag="off"; 
-            rssfeed_no_items="0"; 
-            rssfeed_cache = "f4ec9dc9f4909a1cd427f3b351f1b51b"; 
-            //--> 
-            </script> 
-            <script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script> 
-            <!-- end sw-rss-feed code -->
-        </div>
+        
 
         <!-- Footer -->
         <div class="footer">
@@ -15850,7 +15873,7 @@
             </script>
 
         </div>
-helllo
+
     </div>
 </body>
 

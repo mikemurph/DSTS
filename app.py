@@ -90,6 +90,16 @@ def page_one():
 def newsfeed():
     return render_template('/final/newsfeed.html')
 
+#newsfeed
+@app.route('/orgnpage')
+def orgnPage():
+    return render_template('/final/orgnPage.html')
+
+    #newsfeed
+@app.route('/indivpage')
+def indivPage():
+    return render_template('/final/indivPage.html')
+
 #new pagetwo
 @app.route('/pagetwo')
 def page_two():
@@ -187,6 +197,8 @@ def make_vessel_search():
     result = query_db("sdn.db", sqlstring)
 
     return render_template('/final/vessl.html', result=result)
+
+
 
 # also Vessel search by flag; show countries with total count.
 #
