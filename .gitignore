@@ -1,0 +1,19 @@
+# RANDOM files #
+################
+.DS_Store
+#??????
+
+# Log files #
+#############
+*.log
+
+
+# Caches #
+##########
+__pycache__
+
+
+# Databases #
+#############
+natn_db.db
+orgs_db.db

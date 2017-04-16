@@ -175,6 +175,7 @@
                         <div class="panel-heading">
                             Organization sanction search
                         </div>
+
                         <div class="panel-body">
                             <div class="row">
                                 <form action="/organizationsearch" method="POST">
@@ -212,22 +213,32 @@
                                     <thead>
                                         <tr>
                                             <th> Name </th>
-                                            <th> ID# </th>
-                                            <th> Organization </th>
-                                            <th> Program(s) </th>
+                                            <th> Total Designations (OFAC) </th>
+                                            <th> Individual Designations (OFAC)</th>
+                                            <th> Entity Designations (OFAC)</th>
+                                            <th> Total Designations (UN)</th>
+                                            <th> Individual Designations (UN)</th>
+                                            <th> Entity Designations (UN)</th>
 
-                                            <th> Remarks </th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
                                         {% for row in result %}
                                           <tr>
+                                        <!--      <td><a href='hi.com'>
+                                             {{ row[0] }} 
+                                             </a></td> -->
+                                            <td><a href="{{ query_db_indiv('john') }}">
+                                             {{ row[0] }} 
+                                             </a></td>
+
                                              <td>{{row[1]}}</td>
-                                             <td>{{row[0]}}</td>
+                                             <td>{{row[2]}}</td>
                                              <td>{{row[3]}}</td>
-                                             <td>{{row[9]}}</td>
-                                             <td>{{row[11]}}</td>
+                                             <td>{{row[4]}}</td>
+                                             <td>{{row[5]}}</td>
+                                             <td>{{row[6]}}</td>
                                           </tr>
                                        {% endfor %}
                                     </tbody>

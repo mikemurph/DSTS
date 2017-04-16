@@ -1,7 +1,7 @@
 #!/usr/bin/env/python3
 
 #imports
-from flask import Flask, render_template, request, json, g
+from flask import Flask, render_template, request, json, g, redirect
 
 import sqlite3 as sql
 import db_init
@@ -36,14 +36,34 @@ atexit.register(lambda: scheduler.shutdown())
 
 
 # functions
-def query_db(query_string):
-    conn = sql.connect("sdn.db")
+# def query_db(query_string):
+#     conn = sql.connect("sdn.db")
+#     cursor = conn.cursor()
+#     cursor.execute(query_string)
+#     # cursor.execute("SELECT ? FROM STUFF", stuff)
+#     result = cursor.fetchall()
+#     conn.close()
+#     return result
+
+def query_db(db_filename, query_string):
+    conn = sql.connect(db_filename)
     cursor = conn.cursor()
     cursor.execute(query_string)
     # cursor.execute("SELECT ? FROM STUFF", stuff)
     result = cursor.fetchall()
     conn.close()
     return result
+
+def query_db_indiv(the_name):
+    sqlstring = """
+    SELECT DISTINCT * FROM sdn WHERE sdnType='individual' AND name LIKE '%{0}%'
+    """.format(the_name)
+    result = query_db("sdn.db", sqlstring)
+
+    # return redirect('/final/indiv.html')
+    return render_template('/final/indiv.html', result=result)
+
+app.jinja_env.globals.update(query_db_indiv=query_db_indiv)
 
 
 #old
@@ -100,19 +120,6 @@ def aircraft_page():
 def vessel_page():
     return render_template('/final/vessl.html')
 
-#execute db script?
-@app.route('/exec')
-def parse(name = None):
-    import db_init
-    print("done")
-    return render_template('runDBscript.html', name = name)
-
-@app.route('/burundi')
-def show(name=None):
-    sqlstring = "SELECT * FROM sdn WHERE d='BURUNDI'"
-    output = query_db(sqlstring)
-    #prints out html from output
-    return render_template('page_two.html', output = output, name = name)
 
 @app.route('/namesearch', methods=["POST"])
 def make_search():
@@ -121,7 +128,7 @@ def make_search():
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType='{0}' AND name LIKE '%{1}%'
     """.format(search_category, search_term)
-    result = query_db(sqlstring)
+    result = query_db("sdn.db", sqlstring)
 
     return render_template('/final/indiv.html', result=result)
 
@@ -133,7 +140,7 @@ def make_indiv_search():
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType='individual' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term)
-    result = query_db(sqlstring)
+    result = query_db("sdn.db", sqlstring)
 
     return render_template('/final/indiv.html', result=result, dropdown=search_category)
 
@@ -144,7 +151,7 @@ def make_entity_search():
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND sdnType!='aircraft' AND sdnType!='entity' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term)
-    result = query_db(sqlstring)
+    result = query_db("sdn.db", sqlstring)
 
     return render_template('/final/entity.html', result=result)
 
@@ -152,9 +159,10 @@ def make_entity_search():
 def make_orgn_search():
     search_term = request.form['SearchBox0']
     sqlstring = """
-    SELECT DISTINCT * FROM sdn WHERE sdnType!='individual' AND name LIKE '%{0}%'
+    SELECT DISTINCT * FROM orgs_db WHERE org_name LIKE "%{0}%"
     """.format(search_term)
-    result = query_db(sqlstring)
+    # this is vulnerable to SQL injection! Use parametrization of variables.. but then need to execute command directly... or pass in the args to the query_db function... 
+    result = query_db("orgs_db.db", sqlstring)
 
     return render_template('/final/orgn.html', result=result)
 
@@ -165,7 +173,7 @@ def make_aircr_search():
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType=='aircraft' AND {0} LIKE '%{1}%'
     """.format(search_category, search_term)
-    result = query_db(sqlstring)
+    result = query_db("sdn.db", sqlstring)
 
     return render_template('/final/aircr.html', result=result)
 
@@ -176,7 +184,7 @@ def make_vessel_search():
     sqlstring = """
     SELECT DISTINCT * FROM sdn WHERE sdnType=='vessel' AND {0}  LIKE '%{1}%'
     """.format(search_category, search_term)
-    result = query_db(sqlstring)
+    result = query_db("sdn.db", sqlstring)
 
     return render_template('/final/vessl.html', result=result)
 
@@ -202,38 +210,3 @@ def initdb_command():
     print('Initialized the database.')
 
 
-
-# conn = sql.connect("mydatabase.db")
-# cursor = conn.cursor()
-
-# try:
-#     cursor.execute("""CREATE TABLE albums
-#                       (title text, artist text, release_date text,
-#                        publisher text, media_type text)
-#                    """)
-# except:
-#     pass
-
-# cursor.execute("INSERT INTO albums VALUES ('Glow', 'Andy Hunter', '7/24/2012', 'Xplore Records', 'MP3')")
-# conn.commit()
-# albums = [('Exodus', 'Andy Hunter', '7/9/2002', 'Sparrow Records', 'CD'),
-#           ('Until We Have Faces', 'Red', '2/1/2011', 'Essential Records', 'CD'),
-#           ('The End is Where We Begin', 'Thousand Foot Krutch', '4/17/2012', 'TFKmusic', 'CD'),
-#           ('The Good Life', 'Trip Lee', '4/10/2012', 'Reach Records', 'CD')]
-# cursor.executemany("INSERT INTO albums VALUES (?,?,?,?,?)", albums)
-# conn.commit()
-
-# sql = "SELECT * FROM albums WHERE artist=?"
-# cursor.execute(sql, [("Red")])
-# print(cursor.fetchall())  # or use fetchone()
-
-# with open('test.csv', 'r') as file:
-#     dr = csv.DictReader(file)
-#     to_db = [(i['title'], i['artist'], i['release_date'], i['publisher'], i['media_type']) for i in dr]
-# cursor.executemany("INSERT INTO albums VALUES (?,?,?,?,?)", to_db)
-# conn.commit()
-
-# sql = "SELECT * FROM albums WHERE title='bob'"
-# cursor.execute(sql)
-# print(cursor.fetchall())
-# conn.close()
