@@ -169,7 +169,9 @@
     <!-- Main content-->
     <div class="content">
         <div class="container-fluid">
+            <div class="row">
             <div class="col-sm-4">
+                
                     <div class="panel">
                         <div class="panel-heading">
                             Individuals related to organization
@@ -204,6 +206,90 @@
                                     <ul>
                                         <li> Nationality: Saudi Arabia </li>
                                         <li> Other organizations: JEMAA ISLAMIYAH (JI), Al-Nusrah Front (ANF) </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Entities related to organization
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li> 
+                                    <h5> 
+                                        <a href="/indivpage">VIAJES MERCURIO LTDA.</a>
+                                        <span class="label label-warning"> SDNT </span>
+                                    </h5>
+                                    <ul>
+                                        <li> Nationality: Cuba </li>
+                                    </ul>
+                                </li>
+                                <li> 
+                                    <h5> 
+                                        <a href="/indivpage">BANK OF SUDAN  </a>
+                                        <span class="label label-warning"> SDN </span>
+                                    </h5>
+                                    <ul>
+                                        <li> Nationality: Sudan </li>
+                                    </ul>
+                                </li>
+                                <li> 
+                                    <h5> 
+                                        <a href="/indivpage">BABANOUSA MILK PRODUCTS FACTORY</a>
+                                        <span class="label label-warning"> SDN </span>
+                                    </h5>
+                                    <ul>
+                                        <li> Nationality: Sudan</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Aircraft and vessels related to organization
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li> 
+                                    <h5> 
+                                        <a href="/indivpage">LAODICEA</a>
+                                        <span class="label label-muted"> Vessel </span>
+                                    </h5>
+                                    <ul>
+                                        <li> Vessel Registration Identification IMO: 9385233 </li>
+                                        <li> Linked To: SYRIAN GENERAL AUTHORITY FOR MARITIME TRANSPORT</li>
+                                    </ul>
+                                </li>
+                                <li> 
+                                    <h5> 
+                                        <a href="/indivpage">TALA</a>
+                                        <span class="label label-muted"> Vessel </span>
+                                    </h5>
+                                    <ul>
+                                        <li> Vessel Registration Identification IMO: 8012114 </li>
+                                        <li> Linked To: MILENYUM ENERGY S.A </li>
+                                    </ul>
+                                </li>
+                                <li> 
+                                    <h5> 
+                                        <a href="/indivpage">EX-35011</a>
+                                        <span class="label label-muted"> Aircraft </span>
+                                    </h5>
+                                    <ul>
+                                        <li> Aircraft Construction Number: 838</li>
+                                        <li> Aircraft Manufacture Date: 28 Aug 2002</li>
+                                        <li> Aircraft Model: A300B4-622R</li>
+                                        <li> Aircraft Operator: MAHAN AIR</li>
+
                                     </ul>
                                 </li>
                             </ul>
@@ -275,23 +361,23 @@
             <!-- Charts -->
             <script>
                 var data = [
-                  { y: '2014', a: 50, b: 90},
-                  { y: '2015', a: 65,  b: 75},
-                  { y: '2016', a: 50,  b: 50},
-                  { y: '2017', a: 75,  b: 60},
-                  { y: '2018', a: 80,  b: 65},
-                  { y: '2019', a: 90,  b: 70},
-                  { y: '2020', a: 100, b: 75},
-                  { y: '2021', a: 115, b: 75},
-                  { y: '2022', a: 120, b: 85},
-                  { y: '2023', a: 145, b: 85},
-                  { y: '2024', a: 160, b: 95}
+                  { y: '2004', a: 50, b: 90},
+                  { y: '2005', a: 65,  b: 75},
+                  { y: '2006', a: 50,  b: 50},
+                  { y: '2007', a: 75,  b: 60},
+                  { y: '2008', a: 80,  b: 65},
+                  { y: '2009', a: 90,  b: 70},
+                  { y: '2010', a: 100, b: 75},
+                  { y: '2011', a: 115, b: 75},
+                  { y: '2012', a: 120, b: 85},
+                  { y: '2013', a: 145, b: 85},
+                  { y: '2017', a: 160, b: 95}
                 ],
                 config = {
                   data: data,
                   xkey: 'y',
                   ykeys: ['a', 'b'],
-                  labels: ['Total Income', 'Total Outcome'],
+                  labels: ['Total Individuals', 'Total Entities'],
                   fillOpacity: 0.6,
                   hideHover: 'auto',
                   behaveLikeLine: true,
@@ -307,9 +393,9 @@
                     Morris.Donut({
                       element: 'pie-chart',
                       data: [
-                        {label: "Aircraft", value: 0},
-                        {label: "Entity", value: 1},
                         {label: "Individual", value: 3},
+                        {label: "Aircraft", value: 1},
+                        {label: "Entity", value: 3},
                         {label: "Vessel", value: 2}
                       ]
                       ,
@@ -324,6 +410,7 @@
         </div>
 
     </div>
+
 
 </body>
 
