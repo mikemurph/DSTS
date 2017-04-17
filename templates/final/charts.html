@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.png') }}"/>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.png') }}"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'/>
 
     <!-- Styling -->
     <link rel="stylesheet" href="{{url_for('static', filename='addons/bootstrap/css/bootstrap.css') }}"/>
@@ -32,7 +32,8 @@
             <div id="navbar" class="navbar-collapse">
                 <ul class="breadcrumb">
                     <li class="breadcrumb-home"><a href="/"><i class="fa fa-home"></i></a>
-                    <li class="active"><a href="/entity">Entity Sanctions</a></li>
+                    <li class="active"><a href="/individual">Individual Sanctions</a></li>
+
                 </ul>
 
             </div>
@@ -88,7 +89,7 @@
                 </ul>
             </li>
             <li>
-                <a href="/charts">
+            <a href="/charts">
                     <i class="fa fa-area-chart"></i>
                     <span>Charts</span>
                 </a>
@@ -105,7 +106,6 @@
                     <span> Maps </span>
                 </a>
             </li>
-            
         </ul>
 
         <div class="time text-center">
@@ -126,11 +126,11 @@
                 <div class="col-sm-12">
                     <div class="panel">
                         <div class="panel-heading">
-                            Entity sanction search
+                            Individual sanction search
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <form action="/entitysearch" method="POST">
+                                <form action="/individualsearch" method="POST">
 
                                 <div class="form-inline col-xs-3 no-margin">
 
@@ -140,7 +140,9 @@
                                                 <option value="name">Name(s)</option>
                                                 <option value="uid">ID Number(s)</option>
                                                 <option value="program">Program Tag</option>
-                                                <option value="Location">Location</option>
+                                                <option value="remarks">Location</option>
+
+
 
                                         </select>
                                     </label>
@@ -154,6 +156,10 @@
                                             <span class="fa fa-search" aria-hidden="true"></span>
                                             <input type="submit" name="form-type"  class="btn btn-success no-margin"/>
                                         </span>
+                                        <!--
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-success no-margin" href="/namesearch" name="my-form" value="Submit!"><span class="fa fa-search" aria-hidden="true"></span></a>
+                                        </span> -->
                                     </div>
                                 </div>
                             </div>
@@ -168,18 +174,18 @@
                                             <th> ID# </th>
                                             <th> Organization </th>
                                             <th> Program(s) </th>
-
+                                            <!-- <th> List </th>
+                                            <th> Address </th> -->
                                             <th> Remarks </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         {% for row in result %}
                                           <tr>
                                              <td>{{row[1]}}</td>
                                              <td>{{row[0]}}</td>
+                                             <td>{{row[2]}}</td>
                                              <td>{{row[3]}}</td>
-                                             <td>{{row[9]}}</td>
                                              <td>{{row[11]}}</td>
                                           </tr>
                                        {% endfor %}

@@ -130,6 +130,15 @@ def aircraft_page():
 def vessel_page():
     return render_template('/final/vessl.html')
 
+        #new individual page
+@app.route('/charts')
+def charts_page():
+    return render_template('/final/charts.html')
+
+
+@app.route('/maps')
+def maps_page():
+    return render_template('/final/maps.html')
 
 @app.route('/namesearch', methods=["POST"])
 def make_search():
