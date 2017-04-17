@@ -32,8 +32,8 @@
             <div id="navbar" class="navbar-collapse">
                 <ul class="breadcrumb">
                     <li class="breadcrumb-home"><a href="/"><i class="fa fa-home"></i></a>
-                    <li class="active"><a href="/individual">Charts</a></li>
 
+                    <li class="active"><a href="/charts">Charts</a></li>
                 </ul>
 
             </div>
@@ -89,7 +89,7 @@
                 </ul>
             </li>
             <li>
-            <a href="/charts">
+                <a href="/charts">
                     <i class="fa fa-area-chart"></i>
                     <span>Charts</span>
                 </a>
@@ -123,86 +123,84 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                     <div class="panel">
                         <div class="panel-heading">
-                            Charts
+                            Line Chart
                         </div>
                         <div class="panel-body">
-                            <div class="row">
-                                <form action="/individualsearch" method="POST">
-
-                                <div class="form-inline col-xs-3 no-margin">
-
-                                    <label>Search from
-                                        <select name="DropDown0" class="form-control input-sm">
-
-                                                <option value="name">Name(s)</option>
-                                                <option value="uid">ID Number(s)</option>
-                                                <option value="program">Program Tag</option>
-                                                <option value="remarks">Location</option>
-
-
-
-                                        </select>
-                                    </label>
-                                </div>
-
-
-                                <div class="col-xs-9">
-                                    <div class="input-group">
-                                        <input type="search" name = "SearchBox0" class="form-control" placeholder="Search...">
-                                        <span class="input-group-btn">
-                                            <span class="fa fa-search" aria-hidden="true"></span>
-                                            <input type="submit" name="form-type"  class="btn btn-success no-margin"/>
-                                        </span>
-                                        <!--
-                                        <span class="input-group-btn">
-                                            <a class="btn btn-success no-margin" href="/namesearch" name="my-form" value="Submit!"><span class="fa fa-search" aria-hidden="true"></span></a>
-                                        </span> -->
-                                    </div>
-                                </div>
-                            </div>
-                            </form>
-                            <div class="v-spacing-xs"></div>
-
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th> Name </th>
-                                            <th> ID# </th>
-                                            <th> Organization </th>
-                                            <th> Program(s) </th>
-                                            <!-- <th> List </th>
-                                            <th> Address </th> -->
-                                            <th> Remarks </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for row in result %}
-                                          <tr>
-                                             <td>{{row[1]}}</td>
-                                             <td>{{row[0]}}</td>
-                                             <td>{{row[2]}}</td>
-                                             <td>{{row[3]}}</td>
-                                             <td>{{row[11]}}</td>
-                                          </tr>
-                                       {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                            <ul class="pagination pull-right">
-                                <li><a href="#">Previous</a></li>
-                                <li class="active" ><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">Next</a></li>
-                            </ul>
+                            <canvas id="myLineChart"></canvas>
                         </div>
+                    </div>
+                </div>
 
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Bar Chart
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="myBarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Radar Chart
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="myRadarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Polar Area Chart
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="myPolarAreaChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Pie Chart
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="myPieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Doughnut Chart
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="myDoughnutChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            Bubble Chart
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="myBubbleChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -218,16 +216,13 @@
 
     <div class="scripts">
 
-   <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+  
         <!-- Addons -->
+                <script src="{{url_for('static', filename='addons/jquery/jquery.min.js') }}
+"></script>
         <script src="{{url_for('static', filename='addons/jquery-ui/jquery-ui.min.js') }}
 "></script>
-        <script src="{{url_for('static', filename='addons/jquery/jquery.min.js') }}
-"></script>
+
         <script src="{{url_for('static', filename='addons/bootstrap/js/bootstrap.min.js') }}
 "></script>
         <script src="{{url_for('static', filename='addons/fullcalendar/lib/moment.min.js') }}
@@ -240,15 +235,230 @@
 
         <!-- Current page scripts -->
         <div class="current-scripts">
-
             <!-- Current page addons -->
+            <script src="{{url_for('static', filename='addons/chartjs/Chart.bundle.min.js')}}"></script>
+
+            <link rel="stylesheet" href="{{url_for('static', filename='addons/morrisjs/morris.css')}}"/>
+            <script src="{{url_for('static', filename='addons/morrisjs/raphael-min.js')}}"></script>
+            <script src="{{url_for('static', filename='addons/morrisjs/morris.min.js')}}"></script>
 
             <!-- Charts -->
-            <script type="text/javascript"></script>
+            <script>
+                var ctx = $("#myLineChart");
+                var dataLine = {
+                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    datasets: [
+                        {
+                            label: "My First dataset",
+                            fill: false,
+                            lineTension: 0.1,
+                            backgroundColor: "#2da9e9",
+                            borderColor: "#2da9e9",
+                            borderCapStyle: 'butt',
+                            borderDash: [],
+                            borderDashOffset: 0.0,
+                            pointBorderColor: "rgba(75,192,192,1)",
+                            pointBackgroundColor: "#fff",
+                            pointBorderWidth: 1,
+                            pointHoverRadius: 5,
+                            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                            pointHoverBorderColor: "rgba(220,220,220,1)",
+                            pointHoverBorderWidth: 2,
+                            pointRadius: 1,
+                            pointHitRadius: 10,
+                            data: [65, 59, 80, 81, 56, 55, 40],
+                            spanGaps: false,
+                        }
+                    ]
+                };
+                var myLineChart = new Chart(ctx, {
+                    type: 'line',
+                    data: dataLine
+                });
 
+
+                var ctx = $("#myBarChart");
+                var dataBar = {
+                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    datasets: [
+                        {
+                            label: "My First dataset",
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1,
+                            data: [65, 59, 80, 81, 56, 55, 40],
+                        }
+                    ]
+                };
+                var myBarChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: dataBar,
+                });
+
+
+                var ctx = $("#myRadarChart");
+                var dataRadar = {
+                    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+                    datasets: [
+                        {   
+                            label: "Activities 1",
+                            backgroundColor: "rgba(14,200,162,0.2)",
+                            borderColor: "#0ec8a2",
+                            pointBackgroundColor: "#0ec8a2",
+                            pointBorderColor: "#fff",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: "#0ec8a2",
+                            data: [65, 59, 90, 81, 56, 55, 40]
+                        },
+                        {
+                            label: "Activities 2",
+                            backgroundColor: "rgba(45,169,232,0.2)",
+                            borderColor: "#2da9e9",
+                            pointBackgroundColor: "#2da9e9",
+                            pointBorderColor: "#fff",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: "#2da9e9",
+                            data: [28, 48, 40, 19, 96, 27, 100]
+                        }
+                    ]
+                };
+                var myRadarChart = new Chart(ctx, {
+                    type: 'radar',
+                    data: dataRadar
+                });
+
+
+                var ctx = $("#myPolarAreaChart");
+                var dataPolarArea = {
+                    datasets: [{
+                        data: [
+                            21,
+                            7,
+                            14
+                        ],
+                        backgroundColor: [
+                            "#0ec8a2",
+                            "#314557",
+                            "#2da9e9"
+                        ],
+                        label: 'My dataset' // for legend
+                    }],
+                    labels: [
+                        "Green",
+                        "Grey",
+                        "Blue"
+                    ]
+                };
+                var myPolarAreaChart = new Chart(ctx, {
+                    type: 'polarArea',
+                    data: dataPolarArea
+                });
+
+
+                var ctx = $("#myPieChart");
+                var dataPie = {
+                    labels: [
+                        "Green",
+                        "Grey",
+                        "Blue"
+                    ],
+                    datasets: [
+                        {
+                            data: [300, 50, 100],
+                            backgroundColor: [
+                                "#0ec8a2",
+                                "#314557",
+                                "#2da9e9"
+                            ]
+                        }]
+                };
+                var myPieChart = new Chart(ctx,{
+                    type: 'pie',
+                    data: dataPie
+                });
+
+
+                var ctx = $("#myDoughnutChart");
+                var dataDoughnut = {
+                    labels: [
+                        "Green",
+                        "Grey",
+                        "Blue"
+                    ],
+                    datasets: [
+                        {
+                            data: [300, 50, 100],
+                            backgroundColor: [
+                                "#0ec8a2",
+                                "#314557",
+                                "#2da9e9"
+                            ]
+                        }]
+                };
+                var myDoughnutChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: dataDoughnut
+                });
+
+
+                var ctx = $("#myBubbleChart");
+                var dataBubble = {
+                    datasets: [
+                        {
+                            label: 'First Dataset',
+                            data: [
+                                {
+                                    x: 20,
+                                    y: 30,
+                                    r: 15
+                                },
+                                {
+                                    x: 40,
+                                    y: 10,
+                                    r: 10
+                                },
+                                {
+                                    x: 30,
+                                    y: 10,
+                                    r: 13
+                                },
+                                {
+                                    x: 10,
+                                    y: 55,
+                                    r: 15
+                                },
+                                {
+                                    x: 40,
+                                    y: 10,
+                                    r: 10
+                                }
+                            ],
+                            backgroundColor:"#2da9e9"
+                        }]
+                };
+                var myBubbleChart = new Chart(ctx, {
+                    type: 'bubble',
+                    data: dataBubble
+                });
+            </script>
         </div>
 
     </div>
+
 
 </body>
 
