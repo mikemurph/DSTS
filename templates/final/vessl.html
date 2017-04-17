@@ -167,7 +167,10 @@
                                             <th> ID# </th>
                                             <th> Organization </th>
                                             <th> Program(s) </th>
-
+                                            <th> Type </th>
+                                            <th> Gross Tonnage</th>
+                                            <th> Flag </th>
+                                            <th> Owner </th>
                                             <th> Remarks </th>
                                         </tr>
                                     </thead>
@@ -177,7 +180,11 @@
                                              <td>{{row[1]}}</td>
                                              <td>{{row[0]}}</td>
                                              <td>{{row[3]}}</td>
+                                             <td>{{row[6]}}</td>
+                                             <td>{{row[7]}}</td>
+                                             <td>
                                              <td>{{row[9]}}</td>
+                                             <td>{{row[10]}}</td>
                                              <td>{{row[11]}}</td>
                                           </tr>
                                        {% endfor %}
